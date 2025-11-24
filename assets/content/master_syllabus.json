@@ -1,0 +1,467 @@
+{
+  "Class 6": {
+    "subjects": [
+      {
+        "name": "Science",
+        "icon": "microscope",
+        "color": "0xFF4CAF50",
+        "chapters": [
+          {
+            "id": "c6_sci_1",
+            "title": "Food: Where Does It Come From?",
+            "desc": "Ingredients and Sources",
+            "videoId": "https://storage.googleapis.com/edulok-content-2025/Food%20%20Where%20Does%20It%20Come%20From%20-%20Explanation%20%20%20Class%206%20Science%20Chapter%201(1).mp4",
+            "notes": "#Food: Where Does It Come From?\n\n**Status:** ✅ Offline Verified\n**Class:** 6 Science\n\n---\n\n## 🧠 Chapter Overview\n\nHere is a quick summary of how food reaches our plate:\n\n* **Variety:** We eat different food items.\n* **Sources:** Plants and Animals.\n* **Eaters:** Herbivores, Carnivores, Omnivores.\n\n---\n\n## 1. Food Variety\nThere is a lot of variation in the food eaten in different regions of India. To prepare food, we need **Ingredients**.\n\n* **Example:** To make boiled rice, we need just two materials: **Rice** and **Water**.\n\n---\n\n## 2. Food Materials and Sources\nWhere do ingredients come from?\n\n### 🌱 Plants\nPlants are the sources of food ingredients like grains, cereals, vegetables, and fruits.\n* *Examples:* Wheat, Paddy (Rice), Mango.\n\n### 🐄 Animals\nAnimals provide us with milk, meat products, and eggs.\n* *Examples:* Cows, Goats and Buffaloes give milk. Hens give eggs.\n\n---\n\n## 3. Plant Parts as Food\nWe eat many leafy vegetables. We eat fruits of some plants. Sometimes roots, sometimes stems and even flowers.\n\n| Plant Part | Example |\n| :--- | :--- |\n| **Root** | Carrot, Radish, Turnip |\n| **Stem** | Potato, Ginger, Sugarcane |\n| **Leaf** | Spinach, Cabbage |\n| **Flower** | Cauliflower, Pumpkin flowers |\n\n> **💡 Did you know?**\n> Bees collect **Nectar** (sweet juice) from flowers, convert it into **Honey**, and store it in their hive.\n\n---\n\n## 4. What Do Animals Eat?\nAnimals are grouped based on their eating habits:\n\n### A. Herbivores 🌿\nAnimals which eat **only plants** or plant products.\n* *Examples:* Cow, Deer, Goat, Buffalo.\n\n### B. Carnivores 🦁\nAnimals which eat **only other animals**.\n* *Examples:* Lion, Tiger, Lizard.\n\n### C. Omnivores 🐻\nAnimals which eat **both plants and animals**.\n* *Examples:* Dog, Cat, Human beings, Crow.\n\n---\n\n## 🔑 Key Keywords\n* **Edible:** Some parts of plants that can be eaten (e.g., Seeds of mustard plant give oil).\n* **Sprouts:** When small white structures grow out of seeds (like Moong or Chana) after soaking in water.",
+            "quiz": [
+              {
+                   "question": "Which part of a ginger plant is edible?",
+                   "options": ["Root", "Stem", "Leaf", "Fruit"],
+                   "answer": 1
+               },
+                {
+                    "question": "Bees collect nectar from?",
+                    "options": ["Leaves", "Stem", "Flowers", "Roots"],
+                    "answer": 2
+               },
+               {
+                   "question": "Which of these is an omnivore?",
+                   "options": ["Lion", "Cow", "Human", "Deer"],
+                   "answer": 2
+                }
+               ]
+          },
+          {
+            "id": "c6_sci_2",
+            "title": "Components of Food",
+            "desc": "Nutrients and Diet",
+            "videoId": "https://storage.googleapis.com/edulok-content-2025/Components%20Of%20Food%20Full%20Chapter%20Class%206%20Science%20%20%20Ncert%20Science%20Class%206%20Chapter%202.mp4",
+            "notes": "# Components of Food\n\n**Status:** ✅ Offline Verified\n**Class:** 6 Science\n\n---\n\n## 🧠 Chapter Overview\n\nFood contains essential substances called **Nutrients** that our body needs to grow and stay healthy. The major nutrients are:\n\n* Carbohydrates & Fats (Energy)\n* Proteins (Growth)\n* Vitamins & Minerals (Protection)\n\n---\n\n## 1. Major Nutrients & Functions\n\n### ⚡ Carbohydrates (Energy Giving)\nThey provide energy to the body.\n* **Sources:** Rice, Wheat, Potato, Sugar, Maize.\n\n### 🛢️ Fats (Energy Bank)\nFats give much more energy than carbohydrates.\n* **Sources:** Oil, Ghee, Butter, Nuts, Eggs.\n\n### 💪 Proteins (Body Building)\nNeeded for the growth and repair of our body.\n* **Sources:** Pulses (Dal), Milk, Soyabean, Meat, Fish.\n\n---\n\n## 2. Testing for Nutrients (Lab Activity) 🧪\nHow do we know if food contains Starch, Protein, or Fat?\n\n| Nutrient | Test Method | Observation (Result) |\n| :--- | :--- | :--- |\n| **Starch** (Carb) | Add 2-3 drops of diluted **Iodine Solution**. | Turns **Blue-Black** color. |\n| **Protein** | Add **Copper Sulphate** (2 drops) + **Caustic Soda** (10 drops). | Turns **Violet** color. |\n| **Fats** | Wrap food in paper and crush it. | An **Oily Patch** appears on paper. |\n\n> **📝 Exam Tip:**\n> Remember the colors! Iodine = Blue-Black, Protein Test = Violet.\n\n---\n\n## 3. Vitamins & Minerals (Protective Food) 🛡️\nThey protect our body against diseases and keep eyes, bones, teeth, and gums healthy.\n\n* **Vitamin A:** Keeps skin and eyes healthy. (Carrot, Papaya)\n* **Vitamin C:** Helps fight diseases. (Lemon, Orange)\n* **Vitamin D:** Helps body use Calcium for bones. (Sunlight, Milk)\n\n---\n\n## 4. Dietary Fibres & Water\n\n* **Roughage (Dietary Fibres):** Does not provide nutrients but helps our body **get rid of undigested food**. Sources: Whole grains, potatoes, fresh fruits.\n* **Water:** Helps absorb nutrients and throw out waste as urine/sweat.\n\n---\n\n## 5. Balanced Diet 🥗\nA diet that contains all the nutrients, roughage, and water in the **right quantities** is called a Balanced Diet.\n\n> **⚠️ Note:** Eating too much fat-rich food causes **Obesity**.\n\n---\n\n## 6. Deficiency Diseases 🏥\nDiseases that occur due to lack of nutrients over a long period.\n\n| Vitamin/Mineral | Deficiency Disease | Symptoms |\n| :--- | :--- | :--- |\n| **Vitamin A** | Loss of Vision | Poor vision, loss of vision in darkness (Night Blindness). |\n| **Vitamin B1** | Beriberi | Weak muscles and very little energy to work. |\n| **Vitamin C** | Scurvy | Bleeding gums, wounds take longer to heal. |\n| **Vitamin D** | Rickets | Bones become soft and bent. |\n| **Calcium** | Bone & Tooth decay | Weak bones, tooth decay. |\n| **Iodine** | Goiter | Glands in neck appear swollen. |\n| **Iron** | Anaemia | Weakness. |\n\n---\n\n## 🔑 Key Keywords\n* **Nutrients:** Components of food necessary for the body.\n* **Deficiency:** Lack of something.\n* **Scurvy:** Disease caused by lack of Vitamin C."
+          },
+          {
+            "id": "c6_sci_3",
+            "title": "Fibre to Fabric",
+            "desc": "Natural and Synthetic",
+            "videoId": "https://storage.googleapis.com/edulok-content-2025/Fibre%20To%20Fabric%20Full%20Chapter%20Class%206%20Science%20%20%20Ncert%20Science%20Class%206%20Chapter%203.mp4",
+            "notes": "# Fibre to Fabric\n\n**Status:** ✅ Offline Verified\n**Class:** 6 Science\n\n---\n\n## 🧠 Chapter Overview\n\nClothes are made of **Fabrics**. Fabrics are made from **Yarns**, and Yarns are made from thin strands called **Fibres**.\n\n**The Journey:**\nFibre 🧵 ➔ Yarn 🧶 ➔ Fabric 👕\n\n---\n\n## 1. Types of Fibres\n\n### A. Natural Fibres 🌱\nObtained from nature (plants and animals).\n* **From Plants:** Cotton, Jute.\n* **From Animals:** Wool (Sheep, Goat, Yak), Silk (Silkworm cocoon).\n\n### B. Synthetic Fibres 🧪\nMade from chemical substances in factories.\n* **Examples:** Polyester, Nylon, Acrylic.\n\n| Natural Fibres | Synthetic Fibres |\n| :--- | :--- |\n| Absorbs water (Good for summer) | Does not absorb water easily |\n| Biodegradable | Non-biodegradable |\n| Example: Cotton shirt | Example: Nylon ropes |\n\n---\n\n## 2. Plant Fibres: Cotton & Jute\n\n### ☁️ Cotton\n* **Where it grows:** Black soil and warm climate.\n* **States:** Gujarat, Maharashtra, Madhya Pradesh.\n* **Cotton Bolls:** The fruit of the cotton plant (lemon size). When mature, they burst open.\n\n> **⚙️ Important Process: Ginning**\n> The process of separating cotton fibres from seeds by combing is called **Ginning**.\n\n### 🌾 Jute\n* **Source:** Stem of the jute plant.\n* **Season:** Rainy season.\n* **States:** West Bengal, Bihar, Assam.\n* **Harvesting:** Stems are harvested and soaked in water for a few days. The stems rot and fibres are separated by hand.\n\n---\n\n## 3. Making Yarn from Fibre\n\n### 🌀 Spinning\nThe process of making yarn from fibres is called **Spinning**.\n* **How?** Fibres from a mass of cotton wool are drawn out and twisted. This brings the fibres together to form a strong yarn.\n* **Tools Used:**\n    1.  **Takli** (Hand Spindle)\n    2.  **Charkha** (Popularized by Mahatma Gandhi)\n    3.  **Spinning Machines** (For large scale)\n\n---\n\n## 4. Yarn to Fabric (Weaving vs Knitting)\n\nHow does thread become cloth? Two main ways:\n\n| Process | Description | Sets of Yarn |\n| :--- | :--- | :--- |\n| **Weaving** | Arranging two sets of yarns together to make a fabric. Done on **Looms**. | **2 Sets** (Criss-cross) |\n| **Knitting** | A single yarn is used to make a piece of fabric (e.g., Socks). Can be done by hand or machines. | **1 Single Yarn** |\n\n> **📝 Exam Tip:**\n> If you pull a thread from a torn sock, the whole fabric unravels. That is **Knitting**.\n\n---\n\n## 5. History of Clothing Material 📜\n* **Ancient Times:** People used bark, big leaves of trees, or animal skins/furs to cover themselves.\n* **Settlement Era:** They learned to weave twigs and grass into mats and baskets.\n* **Early India:** Wore fabrics made of cotton that grew near the river Ganga.\n* **Invention of Sewing Needle:** People started **stitching** fabrics to make clothes. (Before this, they just draped fabrics like Sari/Dhoti).\n\n---\n\n## 🔑 Key Keywords\n* **Ginning:** Separation of seeds from cotton.\n* **Spinning:** Making yarn from fibre.\n* **Looms:** Devices used for weaving fabrics (Hand-operated or Power-operated)."
+          },
+          {
+            "id": "c6_sci_4",
+            "title": "Sorting Materials into Groups",
+            "desc": "Properties of Materials",
+            "videoId": "https://storage.googleapis.com/edulok-content-2025/Sorting%20Materials%20Into%20Groups%20Full%20Chapter%20Class%206%20Science%20%20%20Ncert%20Science%20Class%206%20Chapter%204.mp4",
+            "notes": "# Sorting Materials into Groups\n\n**Status:** ✅ Offline Verified\n**Class:** 6 Science\n\n---\n\n## 🧠 Chapter Overview\n\nWe group objects to make it easier to study their properties and find them easily. Materials are grouped based on their **Similarities** and **Differences**.\n\n**Basis of Classification:**\n1. Appearance (Lustre)\n2. Hardness\n3. Solubility\n4. Float/Sink\n5. Transparency\n\n---\n\n## 1. Appearance (Lustre) ✨\nMaterials can be classified based on whether they shine or look dull.\n\n* **Lustrous:** Materials that have a shine. Usually metals.\n    * *Examples:* Gold, Silver, Copper, Iron (when freshly cut).\n* **Non-Lustrous (Dull):** Materials that do not shine.\n    * *Examples:* Wood, Cardboard, Paper, Chalk.\n\n---\n\n## 2. Hardness 🪨\n* **Hard:** Materials that cannot be compressed or scratched easily.\n    * *Examples:* Iron, Stone, Wood, Bone.\n* **Soft:** Materials that can be compressed or scratched easily.\n    * *Examples:* Cotton, Sponge, Candle wax.\n\n---\n\n## 3. Solubility in Water 💧\n\n### A. Solids in Water\n| Type | Definition | Examples |\n| :--- | :--- | :--- |\n| **Soluble** | Completely disappears or dissolves in water. | Salt, Sugar. |\n| **Insoluble** | Does not dissolve even after stirring. | Sand, Sawdust, Chalk powder. |\n\n### B. Liquids in Water\n* **Miscible:** Liquids that mix well with water (e.g., Vinegar, Lemon juice).\n* **Immiscible:** Liquids that do not mix and form a separate layer (e.g., Oil, Kerosene).\n\n> **📝 Exam Tip:**\n> Oxygen gas dissolves in water, which helps fish breathe. But Nitrogen gas does not dissolve easily.\n\n---\n\n## 4. Float or Sink? ⛵\n* **Float:** Materials lighter than water stay on the surface.\n    * *Examples:* Dry leaf, Wood, Plastic ball, Feather.\n* **Sink:** Materials heavier than water drop to the bottom.\n    * *Examples:* Stone, Key, Iron nail, Coin.\n\n---\n\n## 5. Transparency (Most Important) 👓\nThis is based on how much light can pass through the material.\n\n| Type | Definition | Examples |\n| :--- | :--- | :--- |\n| **Transparent** | We can see clearly through them. Light passes fully. | Glass, Water, Air, Clear plastic. |\n| **Translucent** | We can see but **not clearly**. Light passes partially. | Oiled paper, Butter paper, Frosted glass. |\n| **Opaque** | We **cannot see** through them at all. No light passes. | Wood, Metal, Wall, Cardboard box. |\n\n---\n\n## 🔑 Key Keywords\n* **Material:** The matter from which a thing is or can be made.\n* **Lustre:** The shine of a material.\n* **Opaque:** An object through which you cannot see."
+          },
+          {
+            "id": "c6_sci_5",
+            "title": "Separation of Substances",
+            "desc": "Methods of Separation",
+            "videoId": "https://storage.googleapis.com/edulok-content-2025/Separation%20Of%20Substances%20Full%20Chapter%20Class%206%20Science%20%20%20Ncert%20Science%20Class%206%20Chapter%205.mp4",
+            "notes": "# Separation\n\nHandpicking, Threshing, Winnowing..."
+          },
+          {
+            "id": "c6_sci_6",
+            "title": "Changes Around Us",
+            "desc": "Reversible and Irreversible",
+            "videoId": "https://storage.googleapis.com/edulok-content-2025/Changes%20Around%20Us%20Full%20Chapter%20Class%206%20Science%20%20%20Ncert%20Science%20Class%206%20Chapter%206.mp4",
+            "notes": "# Changes Around Us\n\n**Status:** ✅ Offline Verified\n**Class:** 6 Science\n\n---\n\n## 🧠 Chapter Overview\n\nEverything around us is changing. Day turns into night, nails grow, leaves change color. Changes can be broadly classified into two types:\n\n1. **Reversible Changes** (Can be reversed)\n2. **Irreversible Changes** (Cannot be reversed)\n\n---\n\n## 1. Reversible Changes 🔄\nA change where the substance can be brought back to its original form.\n\n* **Mechanism:** Usually, only the shape or state changes. No new substance is formed.\n* **Examples:**\n    * Melting of Ice into Water (Freeze it to get ice back).\n    * Folding a paper to make a boat (Unfold it to get paper back).\n    * Stretching a rubber band.\n    * Blowing air into a balloon.\n\n---\n\n## 2. Irreversible Changes 🚫\nA change where the substance **cannot** be brought back to its original form.\n\n* **Mechanism:** Often a new substance is formed or permanent damage is done.\n* **Examples:**\n    * Cooking food (Cannot get raw vegetables back).\n    * Bursting a balloon (Cannot fix it).\n    * Burning a paper (Turns to ash).\n    * Growth of a plant or baby.\n    * Sourning of milk (Making Curd).\n\n---\n\n## 3. Changes Caused by Heating (Expansion) 🔥\n\nWhen we heat a substance (especially metals), it increases in size. This is called **Expansion**. When cooled, it shrinks back (**Contraction**).\n\n### 🛠️ The Metal Rim Example (Exam Favorite)\n**How is a metal rim fixed on a wooden wheel?**\n1. The metal rim is made slightly **smaller** than the wooden wheel.\n2. The rim is **Heated**.\n3. It **Expands** (becomes larger) and fits onto the wheel.\n4. Cold water is poured. The rim **Contracts** (shrinks) and fits tightly.\n\n---\n\n## 4. The Candle Confusion 🕯️\nBurning a candle involves BOTH changes:\n\n| Process | Type | Reason |\n| :--- | :--- | :--- |\n| **Melting Wax** | **Reversible** | Molten wax can freeze back into solid wax. |\n| **Burning Wick** | **Irreversible** | The thread burns, gives light/smoke, and reduces in length. |\n\n---\n\n## 📝 Comparison Table\n\n| Feature | Reversible | Irreversible |\n| :--- | :--- | :--- |\n| **Original State** | Can be obtained back | Cannot be obtained |\n| **Nature** | Temporary change | Permanent change |\n| **Example** | Wet clothes to dry clothes | Baking a cake |\n\n---\n\n## 🔑 Key Keywords\n* **Expansion:** Increase in size on heating.\n* **Contraction:** Decrease in size on cooling.\n* **Evaporation:** Changing water into vapour (Reversible)."
+          },
+          {
+            "id": "c6_sci_7",
+            "title": "Getting to Know Plants",
+            "desc": "Herbs, Shrubs, Trees",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Plants\n\nParts of a plant..."
+          },
+          {
+            "id": "c6_sci_8",
+            "title": "Body Movements",
+            "desc": "Joints and Bones",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Body Movements\n\nBall and socket joint..."
+          },
+          {
+            "id": "c6_sci_9",
+            "title": "The Living Organisms",
+            "desc": "Characteristics and Habitats",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Living Organisms\n\nBiotic and Abiotic components..."
+          },
+          {
+            "id": "c6_sci_10",
+            "title": "Motion and Measurement",
+            "desc": "Distance and Units",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Motion\n\nRectilinear, Circular, Periodic motion..."
+          },
+          {
+            "id": "c6_sci_11",
+            "title": "Light, Shadows and Reflections",
+            "desc": "Opaque, Transparent",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Light\n\nFormation of shadows..."
+          },
+          {
+            "id": "c6_sci_12",
+            "title": "Electricity and Circuits",
+            "desc": "Cell, Bulb, Switch",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Electricity\n\nElectric circuit diagram..."
+          }
+        ]
+      },
+      {
+        "name": "Mathematics",
+        "icon": "math",
+        "color": "0xFF2196F3",
+        "chapters": [
+          {
+            "id": "c6_mat_1",
+            "title": "Knowing Our Numbers",
+            "desc": "Large Numbers",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Numbers\n\nComparing numbers..."
+          },
+          {
+            "id": "c6_mat_2",
+            "title": "Whole Numbers",
+            "desc": "Properties",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Whole Numbers\n\nSuccessor and Predecessor..."
+          },
+          {
+            "id": "c6_mat_3",
+            "title": "Playing with Numbers",
+            "desc": "Factors and Multiples",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Factors\n\nPrime and Composite numbers..."
+          },
+          {
+            "id": "c6_mat_4",
+            "title": "Basic Geometrical Ideas",
+            "desc": "Points, Lines, Curves",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Geometry\n\nLine Segment, Ray..."
+          }
+        ]
+      },
+      {
+        "name": "History",
+        "icon": "scroll",
+        "color": "0xFF795548",
+        "chapters": [
+          {
+            "id": "c6_hist_1",
+            "title": "What, Where, How and When?",
+            "desc": "Finding out about the past",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# History Introduction\n\nSources of history..."
+          },
+          {
+            "id": "c6_hist_2",
+            "title": "From Hunting to Growing Food",
+            "desc": "Earliest People",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Early Humans\n\nFarming and Herding..."
+          }
+        ]
+      }
+    ]
+  },
+  "Class 7": {
+    "subjects": [
+      {
+        "name": "Science",
+        "icon": "microscope",
+        "color": "0xFF4CAF50",
+        "chapters": [
+          {
+            "id": "c7_sci_1",
+            "title": "Nutrition in Plants",
+            "desc": "Photosynthesis",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Nutrition\n\nModes of nutrition..."
+          },
+          {
+            "id": "c7_sci_2",
+            "title": "Nutrition in Animals",
+            "desc": "Digestion in Humans",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Digestion\n\nAlimentary canal..."
+          },
+          {
+            "id": "c7_sci_3",
+            "title": "Fibre to Fabric",
+            "desc": "Wool and Silk processing",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Fibre\n\nLife history of silk moth..."
+          }
+        ]
+      },
+      {
+        "name": "Mathematics",
+        "icon": "math",
+        "color": "0xFF2196F3",
+        "chapters": [
+          {
+            "id": "c7_mat_1",
+            "title": "Integers",
+            "desc": "Operations on Integers",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Integers\n\nProperties of addition..."
+          },
+          {
+            "id": "c7_mat_2",
+            "title": "Fractions and Decimals",
+            "desc": "Multiplication & Division",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Fractions\n\nDecimal expansion..."
+          }
+        ]
+      }
+    ]
+  },
+  "Class 8": {
+    "subjects": [
+      {
+        "name": "Science",
+        "icon": "microscope",
+        "color": "0xFF4CAF50",
+        "chapters": [
+          {
+            "id": "c8_sci_1",
+            "title": "Crop Production and Management",
+            "desc": "Agricultural Practices",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Crops\n\nSowing, Irrigation, Harvesting..."
+          },
+          {
+            "id": "c8_sci_2",
+            "title": "Microorganisms: Friend and Foe",
+            "desc": "Virus, Bacteria, Fungi",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Microbes\n\nAntibiotics and Vaccines..."
+          }
+        ]
+      },
+      {
+        "name": "Mathematics",
+        "icon": "math",
+        "color": "0xFF2196F3",
+        "chapters": [
+          {
+            "id": "c8_mat_1",
+            "title": "Rational Numbers",
+            "desc": "Properties",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Rational Numbers\n\nDistributivity of multiplication..."
+          }
+        ]
+      }
+    ]
+  },
+  "Class 9": {
+    "subjects": [
+      {
+        "name": "Science",
+        "icon": "microscope",
+        "color": "0xFF4CAF50",
+        "chapters": [
+          {
+            "id": "c9_sci_1",
+            "title": "Matter in Our Surroundings",
+            "desc": "States of Matter",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Matter\n\nEvaporation and Cooling..."
+          },
+          {
+            "id": "c9_sci_2",
+            "title": "Is Matter Around Us Pure?",
+            "desc": "Mixtures and Solutions",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Purity\n\nSuspension and Colloids..."
+          },
+          {
+            "id": "c9_sci_5",
+            "title": "The Fundamental Unit of Life",
+            "desc": "Cell Structure",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Cell\n\nNucleus, Cytoplasm, Cell Wall..."
+          }
+        ]
+      },
+      {
+        "name": "Maths",
+        "icon": "math",
+        "color": "0xFF2196F3",
+        "chapters": [
+          {
+            "id": "c9_mat_1",
+            "title": "Number Systems",
+            "desc": "Irrational Numbers",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Numbers\n\nReal numbers and their expansion..."
+          }
+        ]
+      }
+    ]
+  },
+  "Class 10": {
+    "subjects": [
+      {
+        "name": "Science",
+        "icon": "microscope",
+        "color": "0xFF4CAF50",
+        "chapters": [
+          {
+            "id": "c10_sci_1",
+            "title": "Chemical Reactions and Equations",
+            "desc": "Balancing Equations",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Reactions\n\nTypes of chemical reactions..."
+          },
+          {
+            "id": "c10_sci_6",
+            "title": "Life Processes",
+            "desc": "Nutrition, Respiration",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Life Processes\n\nHuman Heart and Transport..."
+          },
+          {
+            "id": "c10_sci_10",
+            "title": "Light – Reflection and Refraction",
+            "desc": "Mirrors and Lenses",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Light\n\nImage formation by concave mirror..."
+          }
+        ]
+      },
+      {
+        "name": "Maths",
+        "icon": "math",
+        "color": "0xFF2196F3",
+        "chapters": [
+          {
+            "id": "c10_mat_1",
+            "title": "Real Numbers",
+            "desc": "Euclid Division",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Real Numbers\n\nFundamental Theorem of Arithmetic..."
+          },
+          {
+            "id": "c10_mat_2",
+            "title": "Polynomials",
+            "desc": "Zeroes and Coefficients",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Polynomials\n\nDivision algorithm..."
+          }
+        ]
+      },
+      {
+        "name": "English",
+        "icon": "text_block",
+        "color": "0xFFE91E63",
+        "chapters": [
+          {
+            "id": "c10_eng_1",
+            "title": "A Letter to God",
+            "desc": "G.L. Fuentes",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# A Letter to God\n\nStory of Lencho's faith..."
+          },
+          {
+            "id": "c10_eng_2",
+            "title": "Nelson Mandela",
+            "desc": "Long Walk to Freedom",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Mandela\n\nA policy of apartheid..."
+          }
+        ]
+      }
+    ]
+  },
+  "Class 11": {
+    "subjects": [
+      {
+        "name": "Physics",
+        "icon": "flash_1",
+        "color": "0xFF2554A3",
+        "chapters": [
+          {
+            "id": "c11_phy_1",
+            "title": "Units and Measurements",
+            "desc": "Dimensions",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Units\n\nSI units and dimensional analysis..."
+          },
+          {
+            "id": "c11_phy_2",
+            "title": "Motion in a Straight Line",
+            "desc": "Kinematics",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Motion\n\nVelocity-time graphs..."
+          }
+        ]
+      },
+      {
+        "name": "Chemistry",
+        "icon": "flask_2",
+        "color": "0xFFF44336",
+        "chapters": [
+          {
+            "id": "c11_chem_1",
+            "title": "Some Basic Concepts of Chemistry",
+            "desc": "Mole Concept",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Mole Concept\n\nStoichiometry and calculations..."
+          }
+        ]
+      }
+    ]
+  },
+  "Class 12": {
+    "subjects": [
+      {
+        "name": "Physics",
+        "icon": "flash_1",
+        "color": "0xFF2554A3",
+        "chapters": [
+          {
+            "id": "c12_phy_1",
+            "title": "Electric Charges and Fields",
+            "desc": "Electrostatics",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Electrostatics\n\nCoulomb's Law and Electric Field..."
+          }
+        ]
+      },
+      {
+        "name": "Chemistry",
+        "icon": "flask_2",
+        "color": "0xFFF44336",
+        "chapters": [
+          {
+            "id": "c12_chem_1",
+            "title": "Solutions",
+            "desc": "Concentration terms",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Solutions\n\nRaoult's Law and Colligative Properties..."
+          }
+        ]
+      },
+      {
+        "name": "Biology",
+        "icon": "microscope",
+        "color": "0xFF4CAF50",
+        "chapters": [
+          {
+            "id": "c12_bio_1",
+            "title": "Reproduction in Organisms",
+            "desc": "Asexual & Sexual",
+            "videoId": "d7yTNRKAyFA",
+            "notes": "# Reproduction\n\nLifespan and modes of reproduction..."
+          }
+        ]
+      }
+    ]
+  }
+}
