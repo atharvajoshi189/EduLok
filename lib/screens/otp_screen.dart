@@ -145,7 +145,7 @@ class _OtpScreenState extends State<OtpScreen> {
       width: 56, height: 60,
       textStyle: GoogleFonts.poppins(fontSize: 22, fontWeight: FontWeight.w600, color: Theme.of(context).textTheme.bodyLarge?.color),
       decoration: BoxDecoration(
-        color: isDark ? Theme.of(context).cardColor : Colors.grey.shade100,
+        color: Theme.of(context).inputDecorationTheme.fillColor ?? (isDark ? const Color(0xFF2C2C2C) : Colors.grey.shade100),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.transparent),
       ),

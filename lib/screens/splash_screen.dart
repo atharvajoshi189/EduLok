@@ -69,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // ✅ Pure White Background
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor, // ✅ Theme Aware Background
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -78,13 +78,13 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: const Color(0xFF2554A3).withOpacity(0.1), // Light Blue Circle
+                color: Theme.of(context).primaryColor.withOpacity(0.1), // Light Blue Circle
                 shape: BoxShape.circle,
               ),
-              child: const Icon(
+              child: Icon(
                 Iconsax.book_1, // EduLok Icon
                 size: 60,
-                color: Color(0xFF2554A3), // EduLok Blue
+                color: Theme.of(context).primaryColor, // EduLok Blue
               ),
             ),
             const SizedBox(height: 20),
@@ -95,14 +95,14 @@ class _SplashScreenState extends State<SplashScreen> {
               style: GoogleFonts.poppins(
                 fontSize: 32,
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF2554A3),
+                color: Theme.of(context).primaryColor,
               ),
             ),
             Text(
               "Your Offline AI Mentor",
               style: GoogleFonts.poppins(
                 fontSize: 14,
-                color: Colors.grey,
+                color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6),
                 letterSpacing: 1.2,
               ),
             ),
@@ -110,8 +110,8 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(height: 50),
             
             // --- Loader ---
-            const CircularProgressIndicator(
-              color: Color(0xFF2554A3),
+            CircularProgressIndicator(
+              color: Theme.of(context).primaryColor,
             ),
           ],
         ),

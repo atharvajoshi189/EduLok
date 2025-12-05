@@ -1,0 +1,1454 @@
+[
+  {
+    "chapter_number": 1,
+    "chapter_name": "Real Numbers",
+    "formulas": [
+      {
+        "title": "Euclid Division Lemma",
+        "formula": "a = bq + r ; 0 ≤ r < b",
+        "description": "Used to compute HCF."
+      },
+      {
+        "title": "HCF Using Euclid Algorithm",
+        "formula": "HCF(a, b) = HCF(b, r)",
+        "description": "Continue until r = 0."
+      },
+      {
+        "title": "Fundamental Theorem of Arithmetic",
+        "formula": "Every composite number has a unique prime factorization.",
+        "description": "Unique factorization theorem."
+      },
+      {
+        "title": "Terminating Decimal Condition",
+        "formula": "If denominator = 2^m × 5^n, decimal is terminating.",
+        "description": "m, n are non-negative integers."
+      },
+      {
+        "title": "Non-Terminating Recurring Decimal",
+        "formula": "If denominator has any prime except 2 or 5 → recurring decimal.",
+        "description": "Used for rational numbers."
+      },
+      {
+        "title": "Irrational Number Rule",
+        "formula": "p + √q is irrational if q is not a perfect square.",
+        "description": "Sum of rational + irrational is irrational."
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 2,
+    "chapter_name": "Polynomials",
+    "formulas": [
+      {
+        "title": "Degree of Polynomial",
+        "formula": "Highest power of variable",
+        "description": "Degree defines type of polynomial."
+      },
+      {
+        "title": "Zero of Polynomial",
+        "formula": "p(α) = 0",
+        "description": "α is zero if polynomial at α equals zero."
+      },
+      {
+        "title": "Quadratic Polynomial",
+        "formula": "p(x) = ax² + bx + c",
+        "description": "a ≠ 0."
+      },
+      {
+        "title": "Sum & Product of Zeroes (Quadratic)",
+        "formula": "α + β = -b/a , αβ = c/a",
+        "description": "Relationship between zeroes & coefficients."
+      },
+      {
+        "title": "Sum of Zeroes (Cubic)",
+        "formula": "α + β + γ = -b/a",
+        "description": "For ax³ + bx² + cx + d."
+      },
+      {
+        "title": "Product of Zeroes Pairwise (Cubic)",
+        "formula": "αβ + βγ + γα = c/a",
+        "description": "Cubic polynomial relationship."
+      },
+      {
+        "title": "Product of Zeroes (Cubic)",
+        "formula": "αβγ = -d/a",
+        "description": "Constant term in cubic."
+      },
+      {
+        "title": "Remainder Theorem",
+        "formula": "If p(x) is divided by (x - a), remainder = p(a)",
+        "description": "Used for polynomial division."
+      },
+      {
+        "title": "Factor Theorem",
+        "formula": "If p(a) = 0, then (x - a) is factor of p(x)",
+        "description": "General rule for factorization."
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 3,
+    "chapter_name": "Pair of Linear Equations in Two Variables",
+    "formulas": [
+      {
+        "title": "General Form",
+        "formula": "a1x + b1y + c1 = 0 ; a2x + b2y + c2 = 0",
+        "description": "Two linear equations."
+      },
+      {
+        "title": "Unique Solution Condition",
+        "formula": "a1/a2 ≠ b1/b2",
+        "description": "Lines intersect at one point."
+      },
+      {
+        "title": "No Solution Condition",
+        "formula": "a1/a2 = b1/b2 ≠ c1/c2",
+        "description": "Parallel lines."
+      },
+      {
+        "title": "Infinite Solutions Condition",
+        "formula": "a1/a2 = b1/b2 = c1/c2",
+        "description": "Coincident lines."
+      },
+      {
+        "title": "Elimination Method",
+        "formula": "Multiply to eliminate one variable",
+        "description": "Basic solving method."
+      },
+      {
+        "title": "Substitution Method",
+        "formula": "Put value of one variable into another equation",
+        "description": "Step-by-step solving."
+      },
+      {
+        "title": "Cross Multiplication Formula",
+        "formula": "x = (b1c2 - b2c1) / (a1b2 - a2b1), y = (c1a2 - c2a1)/(a1b2 - a2b1)",
+        "description": "Used when unique solution exists."
+      }
+    ]
+  },
+    
+  {
+    "chapter_number": 4,
+    "chapter_name": "Quadratic Equations",
+    "formulas": [
+      {
+        "title": "Standard Form",
+        "formula": "ax² + bx + c = 0",
+        "description": "Quadratic equation (a ≠ 0)."
+      },
+      {
+        "title": "Quadratic Formula",
+        "formula": "x = (-b ± √(b² - 4ac)) / (2a)",
+        "description": "Roots of quadratic equation."
+      },
+      {
+        "title": "Discriminant",
+        "formula": "D = b² - 4ac",
+        "description": "Determines nature of roots."
+      },
+      {
+        "title": "Nature of Roots (Real & Equal)",
+        "formula": "D = 0",
+        "description": "Both roots equal."
+      },
+      {
+        "title": "Nature of Roots (Real & Distinct)",
+        "formula": "D > 0",
+        "description": "Two distinct real roots."
+      },
+      {
+        "title": "Nature of Roots (Imaginary)",
+        "formula": "D < 0",
+        "description": "No real roots."
+      },
+      {
+        "title": "Sum of Roots",
+        "formula": "α + β = -b/a",
+        "description": "Relation from polynomial identity."
+      },
+      {
+        "title": "Product of Roots",
+        "formula": "αβ = c/a",
+        "description": "Relation from polynomial identity."
+      },
+      {
+        "title": "Completing the Square",
+        "formula": "x² + px + q = (x + p/2)² - (p²/4 - q)",
+        "description": "Used for deriving quadratic formula."
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 5,
+    "chapter_name": "Arithmetic Progressions",
+    "formulas": [
+      {
+        "title": "Nth Term of AP",
+        "formula": "aₙ = a + (n - 1)d",
+        "description": "a = first term, d = common difference."
+      },
+      {
+        "title": "Common Difference",
+        "formula": "d = a₂ - a₁",
+        "description": "Difference between consecutive terms."
+      },
+      {
+        "title": "Sum of First n Terms",
+        "formula": "Sₙ = n/2 [2a + (n - 1)d]",
+        "description": "Sum using first term and common difference."
+      },
+      {
+        "title": "Sum Using Last Term",
+        "formula": "Sₙ = n/2 (a + l)",
+        "description": "l = last term."
+      },
+      {
+        "title": "Nth Term from the End",
+        "formula": "aₙ' = l - (n - 1)d",
+        "description": "Term counted from last."
+      },
+      {
+        "title": "AP Means",
+        "formula": "If a, b, c are in AP → 2b = a + c",
+        "description": "Middle term is arithmetic mean."
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 6,
+    "chapter_name": "Triangles",
+    "formulas": [
+      {
+        "title": "Basic Proportionality Theorem (BPT)",
+        "formula": "If a line || to one side → it divides other two sides in same ratio",
+        "description": "DE || BC → AD/DB = AE/EC"
+      },
+      {
+        "title": "Converse of BPT",
+        "formula": "If AD/DB = AE/EC → DE || BC",
+        "description": "Used to prove parallel segments."
+      },
+      {
+        "title": "Pythagoras Theorem",
+        "formula": "a² + b² = c²",
+        "description": "Right-angled triangle."
+      },
+      {
+        "title": "Converse of Pythagoras",
+        "formula": "If a² + b² = c² → angle C is 90°",
+        "description": "Used to prove right angle."
+      },
+      {
+        "title": "Area Similarity",
+        "formula": "Area₁ / Area₂ = (side₁/side₂)²",
+        "description": "Ratio of areas = square of ratio of sides."
+      },
+      {
+        "title": "Perimeter Similarity",
+        "formula": "P₁ / P₂ = side₁ / side₂",
+        "description": "Perimeter ∝ corresponding sides."
+      },
+      {
+        "title": "Right Triangle Similarity",
+        "formula": "Smaller triangles formed inside are similar to main triangle.",
+        "description": "Altitude from right angle property."
+      },
+      {
+        "title": "Heron's Formula",
+        "formula": "Area = √[s(s − a)(s − b)(s − c)]",
+        "description": "s = (a + b + c)/2"
+      },
+      {
+        "title": "Area of Triangle",
+        "formula": "1/2 × base × height",
+        "description": "Basic area formula."
+      },
+      {
+        "title": "Sine Rule (Class 10 extension)",
+        "formula": "a/sinA = b/sinB = c/sinC",
+        "description": "Not deep in NCERT but used in many boards."
+      }
+    ]
+  },
+    
+  {
+    "chapter_number": 10,
+    "chapter_name": "Circles",
+    "formulas": [
+      {
+        "title": "Tangent Perpendicularity",
+        "formula": "OP ⟂ PT",
+        "description": "Radius is perpendicular to tangent at point of contact."
+      },
+      {
+        "title": "Equal Tangents Theorem",
+        "formula": "PA = PB",
+        "description": "Tangents drawn from an external point are equal."
+      },
+      {
+        "title": "Tangent-Secant Power Theorem",
+        "formula": "PT² = PA × PB",
+        "description": "Power of a point."
+      },
+      {
+        "title": "Chord Properties",
+        "formula": "Perpendicular from center bisects the chord",
+        "description": "Used for chord length and radius relations."
+      },
+      {
+        "title": "Angle at Center & Circumference",
+        "formula": "Angle at center = 2 × angle at circumference",
+        "description": "∠AOB = 2 × ∠ACB"
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 11,
+    "chapter_name": "Constructions",
+    "formulas": [
+      {
+        "title": "Construction Principle",
+        "formula": "Locus and bisector rules",
+        "description": "Used for dividing line, bisectors, tangents."
+      },
+      {
+        "title": "Angle Bisector",
+        "formula": "Bisector divides angle into two equal parts",
+        "description": "Compass-based construction."
+      },
+      {
+        "title": "Perpendicular Bisector",
+        "formula": "Line perpendicular to segment through its midpoint",
+        "description": "Used for triangle constructions."
+      },
+      {
+        "title": "Dividing a Line Segment",
+        "formula": "Section ratio using parallel lines",
+        "description": "Method of similar triangles."
+      },
+      {
+        "title": "Construction of Tangent",
+        "formula": "Use radius ⟂ tangent property",
+        "description": "Circle tangent construction method."
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 12,
+    "chapter_name": "Areas Related to Circles",
+    "formulas": [
+      {
+        "title": "Area of Circle",
+        "formula": "A = πr²",
+        "description": "r = radius."
+      },
+      {
+        "title": "Circumference",
+        "formula": "C = 2πr",
+        "description": "Perimeter of circle."
+      },
+      {
+        "title": "Area of Sector",
+        "formula": "Area = (θ/360°) × πr²",
+        "description": "θ in degrees."
+      },
+      {
+        "title": "Arc Length",
+        "formula": "Arc = (θ/360°) × 2πr",
+        "description": "Length of circular arc."
+      },
+      {
+        "title": "Area of Segment",
+        "formula": "Area = Area of Sector − Area of Triangle",
+        "description": "Used for curved segments."
+      },
+      {
+        "title": "Area of Ring",
+        "formula": "π(R² − r²)",
+        "description": "Difference between two circles."
+      },
+      {
+        "title": "Area of Shaded Portion",
+        "formula": "Area = Total − Unshaded",
+        "description": "General method for composite figures."
+      }
+    ]
+  },
+    
+  {
+    "chapter_number": 13,
+    "chapter_name": "Surface Areas and Volumes",
+    "formulas": [
+      {
+        "title": "Cuboid TSA",
+        "formula": "TSA = 2(lb + bh + hl)",
+        "description": "Total surface area of cuboid."
+      },
+      {
+        "title": "Cuboid LSA",
+        "formula": "LSA = 2h(l + b)",
+        "description": "Lateral surface area."
+      },
+      {
+        "title": "Cuboid Volume",
+        "formula": "V = l × b × h",
+        "description": "Volume of cuboid."
+      },
+      {
+        "title": "Cube TSA",
+        "formula": "TSA = 6a²",
+        "description": "a = edge length."
+      },
+      {
+        "title": "Cube LSA",
+        "formula": "LSA = 4a²",
+        "description": "Four faces area."
+      },
+      {
+        "title": "Cube Volume",
+        "formula": "V = a³",
+        "description": "Volume of cube."
+      },
+      {
+        "title": "Right Circular Cylinder TSA",
+        "formula": "TSA = 2πrh + 2πr²",
+        "description": "Curved + 2 bases."
+      },
+      {
+        "title": "Cylinder CSA",
+        "formula": "CSA = 2πrh",
+        "description": "Curved surface area only."
+      },
+      {
+        "title": "Cylinder Volume",
+        "formula": "V = πr²h",
+        "description": "Base area × height."
+      },
+      {
+        "title": "Right Circular Cone TSA",
+        "formula": "TSA = πr(r + l)",
+        "description": "l = slant height."
+      },
+      {
+        "title": "Cone CSA",
+        "formula": "CSA = πrl",
+        "description": "Curved surface area."
+      },
+      {
+        "title": "Cone Volume",
+        "formula": "V = (1/3)πr²h",
+        "description": "1/3 × cylinder volume."
+      },
+      {
+        "title": "Sphere TSA",
+        "formula": "TSA = 4πr²",
+        "description": "Total surface area."
+      },
+      {
+        "title": "Sphere Volume",
+        "formula": "V = (4/3)πr³",
+        "description": "Volume of sphere."
+      },
+      {
+        "title": "Hemisphere TSA",
+        "formula": "TSA = 3πr²",
+        "description": "CSA + base."
+      },
+      {
+        "title": "Hemisphere CSA",
+        "formula": "CSA = 2πr²",
+        "description": "Curved surface only."
+      },
+      {
+        "title": "Hemisphere Volume",
+        "formula": "V = (2/3)πr³",
+        "description": "Half of sphere volume."
+      },
+      {
+        "title": "Frustum TSA",
+        "formula": "TSA = π(r1 + r2)l + π(r1² + r2²)",
+        "description": "Total surface area of cone frustum."
+      },
+      {
+        "title": "Frustum Volume",
+        "formula": "V = (1/3)πh(r1² + r2² + r1r2)",
+        "description": "Volume formula for frustum."
+      },
+      {
+        "title": "Frustum Slant Height",
+        "formula": "l = √[(r1 − r2)² + h²]",
+        "description": "Used for surface area calc."
+      },
+      {
+        "title": "Combination of Solids",
+        "formula": "Total SA = SA1 + SA2 − Common Area",
+        "description": "Used when shapes are joined."
+      },
+      {
+        "title": "Conversion: 1 Litre",
+        "formula": "1 L = 1000 cm³",
+        "description": "Volume conversion."
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 14,
+    "chapter_name": "Statistics",
+    "formulas": [
+      {
+        "title": "Mean (Direct Method)",
+        "formula": "x̄ = Σxi / n",
+        "description": "Average of observations."
+      },
+      {
+        "title": "Mean (Grouped Data)",
+        "formula": "x̄ = Σ(fi × xi) / Σfi",
+        "description": "Class marks used."
+      },
+      {
+        "title": "Step-Deviation Method",
+        "formula": "x̄ = a + (Σfiui / Σfi) × h",
+        "description": "Efficient mean calculation."
+      },
+      {
+        "title": "Assumed Mean Method",
+        "formula": "x̄ = a + Σfi(xi − a)/Σfi",
+        "description": "Simplified calculation."
+      },
+      {
+        "title": "Mode (Grouped Data)",
+        "formula": "Mode = l + [(f1 − f0)/(2f1 − f0 − f2)] × h",
+        "description": "Modal class method."
+      },
+      {
+        "title": "Median (Grouped Data)",
+        "formula": "Median = l + [(N/2 − cf)/f] × h",
+        "description": "Median class method."
+      },
+      {
+        "title": "Cumulative Frequency",
+        "formula": "CF = Sum of frequencies",
+        "description": "Used for ogive & median."
+      },
+      {
+        "title": "Less Than Ogive",
+        "formula": "Plot: upper class boundaries vs CF",
+        "description": "Graphical representation."
+      },
+      {
+        "title": "More Than Ogive",
+        "formula": "Plot: lower class boundaries vs CF",
+        "description": "Graphical representation."
+      }
+    ]
+  },
+
+  {
+    "chapter_number": 15,
+    "chapter_name": "Probability",
+    "formulas": [
+      {
+        "title": "Probability Formula",
+        "formula": "P(E) = Number of favourable outcomes / Total outcomes",
+        "description": "Classical definition."
+      },
+      {
+        "title": "Impossible Event",
+        "formula": "P(E) = 0",
+        "description": "Event that never occurs."
+      },
+      {
+        "title": "Sure Event",
+        "formula": "P(E) = 1",
+        "description": "Event that always occurs."
+      },
+      {
+        "title": "Complementary Events",
+        "formula": "P(E) + P(E') = 1",
+        "description": "Sum of event and its complement."
+      },
+      {
+        "title": "Equally Likely Events",
+        "formula": "Same probability for each outcome",
+        "description": "Examples: fair dice, coins."
+      },
+      {
+        "title": "Range of Probability",
+        "formula": "0 ≤ P(E) ≤ 1",
+        "description": "Probability lies between 0 and 1."
+      }
+    ]
+  },
+
+  {
+    "category": "Light - Reflection & Refraction",
+    "formulas": [
+      {
+        "title": "Law of Reflection (1st Law)",
+        "equation": "i = r",
+        "where": "i = Angle of incidence, r = Angle of reflection",
+        "si_unit": "Degrees (°)",
+        "type": "Law"
+      },
+      {
+        "title": "Law of Reflection (2nd Law)",
+        "equation": "Incident ray, reflected ray & normal lie in the same plane",
+        "where": "Applicable for all reflecting surfaces",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Mirror Formula",
+        "equation": "1/v + 1/u = 1/f",
+        "where": "u = Object distance, v = Image distance, f = Focal length",
+        "si_unit": "Meters (m) / Centimeters (cm)",
+        "type": "Formula"
+      },
+      {
+        "title": "Magnification (Mirror)",
+        "equation": "m = h_i / h_o = -v/u",
+        "where": "h_i = image height, h_o = object height, v = image distance, u = object distance",
+        "si_unit": "No Unit",
+        "type": "Formula"
+      },
+      {
+        "title": "Refractive Index (Snell’s Law)",
+        "equation": "n = sin(i) / sin(r)",
+        "where": "i = angle of incidence, r = angle of refraction",
+        "si_unit": "No Unit (dimensionless)",
+        "type": "Law"
+      },
+      {
+        "title": "Absolute Refractive Index",
+        "equation": "n = c / v",
+        "where": "c = speed of light in vacuum, v = speed of light in medium",
+        "si_unit": "Dimensionless",
+        "type": "Formula"
+      },
+      {
+        "title": "Relative Refractive Index",
+        "equation": "n₁₂ = v₂ / v₁",
+        "where": "v₁, v₂ = speeds of light in two media",
+        "si_unit": "Dimensionless",
+        "type": "Formula"
+      },
+      {
+        "title": "Lens Formula",
+        "equation": "1/v - 1/u = 1/f",
+        "where": "u = object distance, v = image distance, f = focal length",
+        "si_unit": "Meters (m) / Centimeters (cm)",
+        "type": "Formula"
+      },
+      {
+        "title": "Magnification (Lens)",
+        "equation": "m = h_i/h_o = v/u",
+        "where": "h_i = image height, h_o = object height",
+        "si_unit": "No Unit",
+        "type": "Formula"
+      },
+      {
+        "title": "Power of Lens",
+        "equation": "P = 1/f",
+        "where": "f = focal length (in meters)",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      },
+      {
+        "title": "Combined Power of Lenses",
+        "equation": "P_total = P₁ + P₂",
+        "where": "P₁, P₂ = individual lens powers",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      },
+      {
+        "title": "Refractive Index using Real Depth & Apparent Depth",
+        "equation": "n = Real\\ Depth / Apparent\\ Depth",
+        "where": "Used for refraction through transparent mediums like water/glass",
+        "si_unit": "Dimensionless",
+        "type": "Formula"
+      },
+      {
+        "title": "Lateral Shift",
+        "equation": "d = t * (sin(i - r) / cos(r))",
+        "where": "t = thickness of slab, i,r = incidence & refraction angles",
+        "si_unit": "Meters (m)",
+        "type": "Formula"
+      }
+    ]
+  },
+    
+  {
+    "category": "The Human Eye and the Colourful World",
+    "formulas": [
+      {
+        "title": "Power of Accommodation",
+        "equation": "A = 1/NR − 1/FR",
+        "where": "NR = Near point distance, FR = Far point distance (in meters)",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      },
+      {
+        "title": "Power of Lens",
+        "equation": "P = 1/f",
+        "where": "f = focal length of lens (in meters)",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      },
+      {
+        "title": "Myopia Correction (Nearsightedness)",
+        "equation": "P = -1/f",
+        "where": "Concave lens is used, f = focal length (negative)",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      },
+      {
+        "title": "Hypermetropia Correction (Farsightedness)",
+        "equation": "P = +1/f",
+        "where": "Convex lens is used, f = focal length (positive)",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      },
+      {
+        "title": "Lens Power for Hypermetropia Exact Formula",
+        "equation": "P = 1/D − 1/d",
+        "where": "D = near point of normal eye (25 cm), d = near point of defective eye",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      },
+      {
+        "title": "Dispersion of Light",
+        "equation": "n = c / v",
+        "where": "n = refractive index, v = speed in medium, c = speed of light in vacuum",
+        "si_unit": "Dimensionless",
+        "type": "Law"
+      },
+      {
+        "title": "Angular Deviation (Prism)",
+        "equation": "δ = (i₁ + i₂) − A",
+        "where": "A = angle of prism, i₁ & i₂ = angles of incidence & emergence",
+        "si_unit": "Degrees (°)",
+        "type": "Formula"
+      },
+      {
+        "title": "Snell's Law (Refractive Index)",
+        "equation": "n = sin(i) / sin(r)",
+        "where": "i = angle of incidence, r = angle of refraction",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Refractive Index (Wavelength Relation)",
+        "equation": "n ∝ 1/λ",
+        "where": "Shorter wavelength → higher refractive index",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Tyndall Effect (Scattering of Light)",
+        "equation": "Scattering ∝ 1/λ⁴",
+        "where": "Shorter wavelengths scatter more (blue > red)",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Red Shift in Atmosphere",
+        "equation": "Scattering ∝ 1/λ⁴ → Red scatters least",
+        "where": "Explains red sunrise/sunset",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Rainbow Formation (Double Refraction)",
+        "equation": "n = sin(i) / sin(r)",
+        "where": "Used to explain dispersion in water droplets",
+        "si_unit": "Dimensionless",
+        "type": "Law"
+      },
+      {
+        "title": "Power for Bifocal Lens",
+        "equation": "P_total = P_far + P_near",
+        "where": "Used when two defects exist",
+        "si_unit": "Dioptre (D)",
+        "type": "Formula"
+      }
+    ]
+  },
+    
+  {
+    "category": "Electricity",
+    "formulas": [
+      {
+        "title": "Electric Current",
+        "equation": "I = Q / t",
+        "where": "Q = charge (C), t = time (s)",
+        "si_unit": "Ampere (A)",
+        "type": "Formula"
+      },
+      {
+        "title": "Charge",
+        "equation": "Q = I × t",
+        "where": "I = current, t = time",
+        "si_unit": "Coulomb (C)",
+        "type": "Formula"
+      },
+      {
+        "title": "Potential Difference",
+        "equation": "V = W / Q",
+        "where": "W = work done, Q = charge",
+        "si_unit": "Volt (V)",
+        "type": "Formula"
+      },
+      {
+        "title": "Ohm's Law",
+        "equation": "V = IR",
+        "where": "I = current, R = resistance",
+        "si_unit": "Volt (V)",
+        "type": "Law"
+      },
+      {
+        "title": "Resistance",
+        "equation": "R = V / I",
+        "where": "V = potential difference, I = current",
+        "si_unit": "Ohm (Ω)",
+        "type": "Formula"
+      },
+      {
+        "title": "Resistivity",
+        "equation": "R = ρ (L / A)",
+        "where": "ρ = resistivity, L = length, A = area",
+        "si_unit": "Ohm-meter (Ω·m)",
+        "type": "Formula"
+      },
+      {
+        "title": "Resistance (Series)",
+        "equation": "R_total = R1 + R2 + R3 + ...",
+        "where": "Series combination",
+        "si_unit": "Ohm (Ω)",
+        "type": "Formula"
+      },
+      {
+        "title": "Resistance (Parallel)",
+        "equation": "1/R_total = 1/R1 + 1/R2 + 1/R3 + ...",
+        "where": "Parallel combination",
+        "si_unit": "Ohm (Ω)",
+        "type": "Formula"
+      },
+      {
+        "title": "Equivalent Resistance (Two Parallel Resistances)",
+        "equation": "R_eq = (R1 × R2) / (R1 + R2)",
+        "where": "Parallel connection",
+        "si_unit": "Ohm (Ω)",
+        "type": "Formula"
+      },
+      {
+        "title": "Electric Power",
+        "equation": "P = VI",
+        "where": "V = voltage, I = current",
+        "si_unit": "Watt (W)",
+        "type": "Formula"
+      },
+      {
+        "title": "Power (Using Resistance)",
+        "equation": "P = I²R",
+        "where": "I = current, R = resistance",
+        "si_unit": "Watt (W)",
+        "type": "Formula"
+      },
+      {
+        "title": "Power (Using Voltage)",
+        "equation": "P = V² / R",
+        "where": "V = voltage, R = resistance",
+        "si_unit": "Watt (W)",
+        "type": "Formula"
+      },
+      {
+        "title": "Electrical Energy",
+        "equation": "E = P × t",
+        "where": "P = power, t = time",
+        "si_unit": "Joule (J)",
+        "type": "Formula"
+      },
+      {
+        "title": "Commercial Electrical Energy",
+        "equation": "1 kWh = 3.6 × 10^6 J",
+        "where": "Used for electricity bill calculation",
+        "si_unit": "Kilowatt-hour (kWh)",
+        "type": "Conversion"
+      },
+      {
+        "title": "Heat Produced in a Resistor (Joule's Law)",
+        "equation": "H = I² R t",
+        "where": "I = current, R = resistance, t = time",
+        "si_unit": "Joule (J)",
+        "type": "Law"
+      },
+      {
+        "title": "Heat Formula (Using Voltage)",
+        "equation": "H = V I t",
+        "where": "V = voltage, I = current, t = time",
+        "si_unit": "Joule (J)",
+        "type": "Formula"
+      },
+      {
+        "title": "Heat Formula (Using Resistivity Form)",
+        "equation": "H = (V² / R) t",
+        "where": "V = voltage, R = resistance",
+        "si_unit": "Joule (J)",
+        "type": "Formula"
+      },
+      {
+        "title": "Current Density (Advanced Board Formula)",
+        "equation": "J = I / A",
+        "where": "I = current, A = area of cross-section",
+        "si_unit": "A/m²",
+        "type": "Formula"
+      },
+      {
+        "title": "Drift Velocity Relation (Extension)",
+        "equation": "I = n A v_d e",
+        "where": "n = number of electrons per unit volume, v_d = drift velocity",
+        "si_unit": "Ampere (A)",
+        "type": "Formula"
+      },
+      {
+        "title": "EMF (Electromotive Force)",
+        "equation": "E = V + Ir",
+        "where": "r = internal resistance, V = terminal voltage",
+        "si_unit": "Volt (V)",
+        "type": "Formula"
+      },
+      {
+        "title": "Terminal Voltage",
+        "equation": "V = E − Ir",
+        "where": "E = EMF, r = internal resistance",
+        "si_unit": "Volt (V)",
+        "type": "Formula"
+      }
+    ]
+  }  ,
+  {
+    "category": "Magnetic Effects of Electric Current",
+    "formulas": [
+      {
+        "title": "Magnetic Field Due to Straight Current-Carrying Conductor",
+        "equation": "B = μ₀ I / (2πr)",
+        "where": "I = current, r = distance from wire, μ₀ = permeability constant",
+        "si_unit": "Tesla (T)",
+        "type": "Formula"
+      },
+      {
+        "title": "Magnetic Field Due to Circular Loop",
+        "equation": "B = μ₀ I / (2R)",
+        "where": "R = radius of loop, I = current",
+        "si_unit": "Tesla (T)",
+        "type": "Formula"
+      },
+      {
+        "title": "Magnetic Field at Center of N-Turns Circular Coil",
+        "equation": "B = μ₀ N I / (2R)",
+        "where": "N = number of turns, R = radius",
+        "si_unit": "Tesla (T)",
+        "type": "Formula"
+      },
+      {
+        "title": "Magnetic Field Inside a Solenoid",
+        "equation": "B = μ₀ n I",
+        "where": "n = number of turns per unit length, I = current",
+        "si_unit": "Tesla (T)",
+        "type": "Formula"
+      },
+      {
+        "title": "Magnetic Force on Current-Carrying Conductor",
+        "equation": "F = B I L sin(θ)",
+        "where": "I = current, L = length of conductor, θ = angle",
+        "si_unit": "Newton (N)",
+        "type": "Formula"
+      },
+      {
+        "title": "Force on a Charge Moving in Magnetic Field",
+        "equation": "F = q v B sin(θ)",
+        "where": "q = charge, v = velocity, B = magnetic field",
+        "si_unit": "Newton (N)",
+        "type": "Formula"
+      },
+      {
+        "title": "Fleming's Left-Hand Rule",
+        "equation": "Thumb = Force, First finger = Field, Middle finger = Current",
+        "where": "Used for direction of force on a conductor",
+        "si_unit": "No Unit",
+        "type": "Rule"
+      },
+      {
+        "title": "Right Hand Thumb Rule",
+        "equation": "Curl fingers → field direction; thumb → current direction",
+        "where": "Used for straight conductor magnetic field",
+        "si_unit": "No Unit",
+        "type": "Rule"
+      },
+      {
+        "title": "Magnetic Field Lines Property",
+        "equation": "No two field lines intersect",
+        "where": "Represents definite direction of B-field",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Electromagnetic Induction (Faraday's Law)",
+        "equation": "EMF ∝ dΦ/dt",
+        "where": "Φ = magnetic flux",
+        "si_unit": "Volt (V)",
+        "type": "Law"
+      },
+      {
+        "title": "Lenz's Law",
+        "equation": "Induced current opposes change causing it",
+        "where": "Gives direction of induced current",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Magnetic Flux",
+        "equation": "Φ = B A cos(θ)",
+        "where": "A = area, θ = angle between field and normal",
+        "si_unit": "Weber (Wb)",
+        "type": "Formula"
+      },
+      {
+        "title": "Force Between Two Parallel Current-Carrying Wires",
+        "equation": "F/L = μ₀ I₁ I₂ / (2πd)",
+        "where": "I₁, I₂ = currents, d = distance between wires",
+        "si_unit": "N/m",
+        "type": "Formula"
+      },
+      {
+        "title": "Torque on a Current Loop",
+        "equation": "τ = N I A B sin(θ)",
+        "where": "A = area of loop, N = turns",
+        "si_unit": "Newton-meter (N·m)",
+        "type": "Formula"
+      },
+      {
+        "title": "Electric Motor Principle",
+        "equation": "Current-carrying conductor in magnetic field experiences force",
+        "where": "Converts electrical energy → mechanical energy",
+        "si_unit": "No Unit",
+        "type": "Principle"
+      },
+      {
+        "title": "Electromagnetic Induction Principle",
+        "equation": "Changing magnetic field induces current",
+        "where": "Basis of generator",
+        "si_unit": "No Unit",
+        "type": "Principle"
+      },
+      {
+        "title": "Fleming’s Right-Hand Rule",
+        "equation": "Thumb = Motion, First finger = Field, Middle finger = Induced current",
+        "where": "Used for generators",
+        "si_unit": "No Unit",
+        "type": "Rule"
+      },
+      {
+        "title": "Transformer Equation",
+        "equation": "V_s / V_p = N_s / N_p",
+        "where": "N = number of turns, V = voltages",
+        "si_unit": "Volt (V)",
+        "type": "Formula"
+      },
+      {
+        "title": "Transformer Power Conservation",
+        "equation": "V_p I_p = V_s I_s",
+        "where": "p = primary, s = secondary",
+        "si_unit": "Watt (W)",
+        "type": "Law"
+      }
+    ]
+  },
+
+  {
+    "category": "Sources of Energy",
+    "formulas": [
+      {
+        "title": "Work Done",
+        "equation": "W = F × d",
+        "where": "F = force, d = displacement",
+        "si_unit": "Joule (J)",
+        "type": "Formula"
+      },
+      {
+        "title": "Power",
+        "equation": "P = W / t",
+        "where": "W = work done, t = time",
+        "si_unit": "Watt (W)",
+        "type": "Formula"
+      },
+      {
+        "title": "Power (Using Force & Velocity)",
+        "equation": "P = F × v",
+        "where": "v = velocity",
+        "si_unit": "Watt (W)",
+        "type": "Formula"
+      },
+      {
+        "title": "Efficiency",
+        "equation": "Efficiency (%) = (Useful Energy Output / Total Energy Input) × 100",
+        "where": "Used for engines, turbines, etc.",
+        "si_unit": "Percentage (%)",
+        "type": "Formula"
+      },
+      {
+        "title": "Efficiency (Power Method)",
+        "equation": "Efficiency = (P_out / P_in) × 100",
+        "where": "P_out = output power, P_in = input power",
+        "si_unit": "Percentage (%)",
+        "type": "Formula"
+      },
+      {
+        "title": "Energy Generated",
+        "equation": "E = P × t",
+        "where": "P = power, t = time",
+        "si_unit": "Joule (J) / kWh",
+        "type": "Formula"
+      },
+      {
+        "title": "Commercial Unit of Energy",
+        "equation": "1 kWh = 3.6 × 10⁶ J",
+        "where": "Used for household electricity billing",
+        "si_unit": "Kilowatt-hour (kWh)",
+        "type": "Conversion"
+      },
+      {
+        "title": "Solar Panel Power Output",
+        "equation": "P = A × I × η",
+        "where": "A = area, I = solar intensity, η = efficiency",
+        "si_unit": "Watt (W)",
+        "type": "Formula"
+      },
+      {
+        "title": "Wind Power Formula",
+        "equation": "P ∝ v³",
+        "where": "v = wind speed",
+        "si_unit": "Power Ratio",
+        "type": "Law"
+      },
+      {
+        "title": "Biogas Energy Relation",
+        "equation": "Energy ∝ Methane Content",
+        "where": "More methane → higher energy",
+        "si_unit": "No Unit",
+        "type": "Law"
+      },
+      {
+        "title": "Hydroelectric Potential Energy",
+        "equation": "PE = m g h",
+        "where": "m = mass of water, g = gravity, h = height",
+        "si_unit": "Joule (J)",
+        "type": "Formula"
+      },
+      {
+        "title": "Hydroelectric Power Formula",
+        "equation": "P = η ρ g h Q",
+        "where": "ρ = water density, Q = flow rate",
+        "si_unit": "Watt (W)",
+        "type": "Formula"
+      },
+      {
+        "title": "Nuclear Energy (Mass–Energy)",
+        "equation": "E = mc²",
+        "where": "m = mass loss, c = speed of light",
+        "si_unit": "Joule (J)",
+        "type": "Formula"
+      },
+      {
+        "title": "Coal Energy Density",
+        "equation": "Energy ∝ Carbon Content",
+        "where": "Higher carbon → more energy release",
+        "si_unit": "No Unit",
+        "type": "Law"
+      }
+    ]
+  },
+
+  {
+    "category": "Chemical Reactions & Equations",
+    "formulas": [
+      {
+        "title": "Burning of Magnesium",
+        "equation": "2Mg + O_2 \\rightarrow 2MgO",
+        "description": "Magnesium burns with a white flame forming magnesium oxide.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Rusting of Iron",
+        "equation": "4Fe + 3O_2 + 2H_2O \\rightarrow 2Fe_2O_3 \\cdot H_2O",
+        "description": "Iron reacts with oxygen and moisture to form rust.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Thermal Decomposition of Calcium Carbonate",
+        "equation": "CaCO_3 \\xrightarrow{\\Delta} CaO + CO_2",
+        "description": "Limestone decomposes on heating to form quicklime.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Electrolysis of Water",
+        "equation": "2H_2O \\rightarrow 2H_2 + O_2",
+        "description": "Water splits into hydrogen and oxygen by electricity.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Displacement Reaction (CuSO₄ + Zn)",
+        "equation": "Zn + CuSO_4 \\rightarrow ZnSO_4 + Cu",
+        "description": "Zinc displaces copper from copper sulfate solution.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Combination Reaction (Hydrogen + Oxygen)",
+        "equation": "2H_2 + O_2 \\rightarrow 2H_2O",
+        "description": "Hydrogen combines with oxygen to form water.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Double Displacement (Precipitation)",
+        "equation": "BaCl_2 + Na_2SO_4 \\rightarrow BaSO_4 \\downarrow + 2NaCl",
+        "description": "Barium sulfate forms as a white precipitate.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Oxidation of Copper",
+        "equation": "2Cu + O_2 \\rightarrow 2CuO",
+        "description": "Copper reacts with oxygen forming black copper oxide.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Reduction of Copper Oxide",
+        "equation": "CuO + H_2 \\rightarrow Cu + H_2O",
+        "description": "Hydrogen reduces copper oxide to copper.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Neutralisation Reaction",
+        "equation": "HCl + NaOH \\rightarrow NaCl + H_2O",
+        "description": "Acid reacts with base to form salt and water.",
+        "type": "Reaction"
+      }
+    ]
+  },
+
+  {
+    "category": "Acids, Bases and Salts",
+    "formulas": [
+      {
+        "title": "Hydrochloric Acid",
+        "equation": "HCl",
+        "description": "Strong acid used in cleaning and laboratory use.",
+        "type": "Compound"
+      },
+      {
+        "title": "Sulfuric Acid",
+        "equation": "H_2SO_4",
+        "description": "Strong acid used in batteries and fertilizers.",
+        "type": "Compound"
+      },
+      {
+        "title": "Sodium Hydroxide",
+        "equation": "NaOH",
+        "description": "Strong base used in soaps and detergents.",
+        "type": "Compound"
+      },
+      {
+        "title": "Baking Soda",
+        "equation": "NaHCO_3",
+        "description": "Used in baking; releases CO₂ when heated.",
+        "type": "Compound"
+      },
+      {
+        "title": "Washing Soda",
+        "equation": "Na_2CO_3 \\cdot 10H_2O",
+        "description": "Used in glass manufacturing and cleaning.",
+        "type": "Compound"
+      },
+      {
+        "title": "Bleaching Powder",
+        "equation": "CaOCl_2",
+        "description": "Used for bleaching cotton and purifying water.",
+        "type": "Compound"
+      },
+      {
+        "title": "Plaster of Paris",
+        "equation": "CaSO_4 \\cdot 1/2H_2O",
+        "description": "Used for casts and decorative items.",
+        "type": "Compound"
+      },
+      {
+        "title": "Formation of Washing Soda",
+        "equation": "Na_2CO_3 + 10H_2O \\rightarrow Na_2CO_3 \\cdot 10H_2O",
+        "description": "Hydration of sodium carbonate.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Heating of Baking Soda",
+        "equation": "2NaHCO_3 \\xrightarrow{\\Delta} Na_2CO_3 + CO_2 + H_2O",
+        "description": "Thermal decomposition of baking soda.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Reaction of Acid with Metal",
+        "equation": "2HCl + Zn \\rightarrow ZnCl_2 + H_2",
+        "description": "Acid reacts with metal to produce hydrogen.",
+        "type": "Reaction"
+      }
+    ]
+  },
+
+  {
+    "category": "Metals and Non-Metals",
+    "formulas": [
+      {
+        "title": "Formation of Metal Oxide",
+        "equation": "4Al + 3O_2 \\rightarrow 2Al_2O_3",
+        "description": "Aluminium forms a protective oxide layer.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Iron with Steam",
+        "equation": "3Fe + 4H_2O \\xrightarrow{steam} Fe_3O_4 + 4H_2",
+        "description": "Iron reacts with steam to form oxide and hydrogen.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Copper with Oxygen",
+        "equation": "2Cu + O_2 \\rightarrow 2CuO",
+        "description": "Black copper oxide forms.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Sodium with Water",
+        "equation": "2Na + 2H_2O \\rightarrow 2NaOH + H_2",
+        "description": "Highly reactive metal forms sodium hydroxide.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Displacement Reaction (Fe + CuSO₄)",
+        "equation": "Fe + CuSO_4 \\rightarrow FeSO_4 + Cu",
+        "description": "Iron displaces copper from solution.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Ionic Bond (NaCl)",
+        "equation": "Na + Cl \\rightarrow Na^+ + Cl^- \\rightarrow NaCl",
+        "description": "Transfer of electron from Na to Cl.",
+        "type": "Concept"
+      },
+      {
+        "title": "Covalent Bond (Chlorine Molecule)",
+        "equation": "Cl + Cl \\rightarrow Cl_2",
+        "description": "Sharing of electrons forms Cl₂ molecule.",
+        "type": "Concept"
+      },
+      {
+        "title": "Reactivity Series",
+        "equation": "K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Hg > Ag > Au",
+        "description": "Arrangement of metals based on reactivity.",
+        "type": "Concept"
+      },
+      {
+        "title": "Ore to Metal Reduction",
+        "equation": "2Fe_2O_3 + 3C \\rightarrow 4Fe + 3CO_2",
+        "description": "Carbon reduces iron ore in blast furnace.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Corrosion",
+        "equation": "Metal + O_2 + H_2O \\rightarrow Oxide/Carbonate",
+        "description": "Surface oxidation of metals.",
+        "type": "Concept"
+      }
+    ]
+  },
+
+  {
+    "category": "Carbon and its Compounds",
+    "formulas": [
+      {
+        "title": "Methane",
+        "equation": "CH_4",
+        "description": "Simplest alkane; used as fuel.",
+        "type": "Compound"
+      },
+      {
+        "title": "Ethane",
+        "equation": "C_2H_6",
+        "description": "Second member of alkane series.",
+        "type": "Compound"
+      },
+      {
+        "title": "Ethanol",
+        "equation": "C_2H_5OH",
+        "description": "Used in alcoholic beverages and sanitizers.",
+        "type": "Compound"
+      },
+      {
+        "title": "Ethanoic Acid",
+        "equation": "CH_3COOH",
+        "description": "Main component of vinegar.",
+        "type": "Compound"
+      },
+      {
+        "title": "Combustion of Methane",
+        "equation": "CH_4 + 2O_2 \\rightarrow CO_2 + 2H_2O",
+        "description": "Methane burns with blue flame producing CO₂ and water.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Esterification",
+        "equation": "CH_3COOH + C_2H_5OH \\xrightarrow{H_2SO_4} CH_3COOC_2H_5 + H_2O",
+        "description": "Formation of ester with fruity smell.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Saponification",
+        "equation": "CH_3COOC_2H_5 + NaOH \\rightarrow CH_3COONa + C_2H_5OH",
+        "description": "Hydrolysis of ester producing soap.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Homologous Series Definition",
+        "equation": "General\\ Formula: C_nH_{2n+2} (alkanes)",
+        "description": "Same functional group with gradual change in mass.",
+        "type": "Concept"
+      },
+      {
+        "title": "Addition Reaction of Alkenes",
+        "equation": "C_2H_4 + H_2 \\xrightarrow{Ni} C_2H_6",
+        "description": "Hydrogenation of ethene gives ethane.",
+        "type": "Reaction"
+      },
+      {
+        "title": "Oxidation of Ethanol",
+        "equation": "C_2H_5OH + O \\rightarrow CH_3COOH + H_2O",
+        "description": "Ethanoic acid formed from ethanol.",
+        "type": "Reaction"
+      }
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+
+

@@ -73,7 +73,7 @@ class _ChapterContentScreenState extends State<ChapterContentScreen> with Single
         materialProgressColors: ChewieProgressColors(
           playedColor: widget.color,
           handleColor: widget.color,
-          backgroundColor: Colors.grey,
+          backgroundColor: Theme.of(context).disabledColor,
           bufferedColor: widget.color.withOpacity(0.3),
         ),
         errorBuilder: (context, errorMessage) {
@@ -196,7 +196,7 @@ class _ChapterContentScreenState extends State<ChapterContentScreen> with Single
                       if (!_isYoutube)
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                          decoration: BoxDecoration(color: Colors.green.shade50, borderRadius: BorderRadius.circular(6)),
+                          decoration: BoxDecoration(color: isDark ? Colors.green.shade900.withOpacity(0.3) : Colors.green.shade50, borderRadius: BorderRadius.circular(6)),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [

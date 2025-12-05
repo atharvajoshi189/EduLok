@@ -9,6 +9,7 @@ import 'package:eduthon/screens/main_layout.dart'; // Import Student Dashboard
 import 'package:eduthon/screens/teacher/teacher_dashboard.dart'; // Import Teacher Dashboard
 import 'package:http/http.dart' as http;
 import 'dart:convert'; 
+import 'package:eduthon/services/language_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key, required void Function() onSignupTap});
@@ -182,7 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 24),
 
                 Text(
-                  'Welcome Back!', 
+                  AppLocalizations.of(context)?.translate('welcomeBack') ?? 'Welcome Back!', 
                   style: GoogleFonts.poppins(
                     fontSize: 28, 
                     fontWeight: FontWeight.bold, 
@@ -190,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   )
                 ),
                 Text(
-                  'Login to continue learning', 
+                  AppLocalizations.of(context)?.translate('loginSubtitle') ?? 'Login to continue learning', 
                   style: GoogleFonts.poppins(
                     fontSize: 14, 
                     color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.7)
@@ -204,11 +205,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   keyboardType: TextInputType.phone,
                   style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyLarge?.color),
                   decoration: InputDecoration(
-                    labelText: 'Phone Number',
+                    labelText: AppLocalizations.of(context)?.translate('phoneNumber') ?? 'Phone Number',
                     labelStyle: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6)),
                     prefixIcon: Icon(Iconsax.call, color: Theme.of(context).primaryColor),
                     filled: true, 
-                    fillColor: isDark ? Theme.of(context).cardColor : const Color(0xFFF8F9FA),
+                    fillColor: Theme.of(context).inputDecorationTheme.fillColor ?? (isDark ? const Color(0xFF2C2C2C) : const Color(0xFFF8F9FA)),
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
                   ),
                 ),
@@ -225,7 +226,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     ),
-                    child: _isLoading ? const CircularProgressIndicator(color: Colors.white) : const Text('Get OTP'),
+                    child: _isLoading ? const CircularProgressIndicator(color: Colors.white) : Text(AppLocalizations.of(context)?.translate('getOtp') ?? 'Get OTP'),
                   ),
                 ),
 
@@ -236,7 +237,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account? ", 
+                      "${AppLocalizations.of(context)?.translate('noAccount') ?? "Don't have an account?"} ", 
                       style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6))
                     ),
                     GestureDetector(
@@ -245,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(context, MaterialPageRoute(builder: (_) => SignupScreen(onLoginTap: () {  },)));
                       },
                       child: Text(
-                        "Sign Up", 
+                        AppLocalizations.of(context)?.translate('createAccount') ?? "Sign Up", 
                         style: GoogleFonts.poppins(
                           color: Theme.of(context).primaryColor, 
                           fontWeight: FontWeight.bold

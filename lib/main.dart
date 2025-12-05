@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:eduthon/screens/splash_screen.dart';
 import 'package:eduthon/services/ai_service.dart';
-import 'package:eduthon/screens/theme/theme_manager.dart'; // Theme Manager Import
+import 'package:eduthon/services/theme_manager.dart';
+import 'package:eduthon/services/data_manager.dart';
+import 'package:eduthon/services/language_service.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AIService().init();
+  await DataManager.loadSyllabus(); // Load AI Syllabus
   runApp(const EduLokApp());
 }
 
@@ -16,82 +20,87 @@ class EduLokApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: ThemeManager(), // Theme change sunne ke liye
+      animation: Listenable.merge([ThemeManager(), LanguageService()]),
       builder: (context, child) {
         return MaterialApp(
           title: 'EduLok',
           debugShowCheckedModeBanner: false,
-          
-          // --- 1. CURRENT MODE ---
+          locale: LanguageService().currentLocale,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en'),
+            Locale('hi'),
+            Locale('mr'),
+            Locale('ta'),
+            Locale('gu'),
+            Locale('bn'),
+            Locale('te'),
+          ],
           themeMode: ThemeManager().themeMode,
-
-          // --- 2. LIGHT THEME (Day Mode) ---
+          
+          // Light Theme
           theme: ThemeData(
             useMaterial3: true,
             brightness: Brightness.light,
-            scaffoldBackgroundColor: const Color(0xFFF8F9FA), // Light Grey
-            cardColor: Colors.white, // Cards White honge
+            scaffoldBackgroundColor: const Color(0xFFF8F9FA),
+            cardColor: Colors.white,
             primaryColor: const Color(0xFF2554A3),
-            
             colorScheme: ColorScheme.fromSeed(
               seedColor: const Color(0xFF2554A3),
               brightness: Brightness.light,
             ),
-            
-            // Text Theme
-            textTheme: GoogleFonts.poppinsTextTheme(ThemeData.light().textTheme),
-            
-            // AppBar Theme
+            textTheme: GoogleFonts.outfitTextTheme(ThemeData.light().textTheme),
             appBarTheme: const AppBarTheme(
               backgroundColor: Colors.white,
-              foregroundColor: Colors.black87, // Icons black honge
+              foregroundColor: Colors.black87,
               elevation: 0,
-            ),
-            
-            // Drawer Theme
-            drawerTheme: const DrawerThemeData(
-              backgroundColor: Colors.white,
             ),
           ),
 
-          // --- 3. DARK THEME (Premium Night Mode) 🔥 ---
+          // Dark Theme
           darkTheme: ThemeData(
             useMaterial3: true,
             brightness: Brightness.dark,
-            scaffoldBackgroundColor: const Color(0xFF121212), // Matte Black (Not Pitch Black)
-            cardColor: const Color(0xFF1E1E1E), // Dark Cards
-            primaryColor: const Color(0xFF458FEA), // Thoda Bright Blue
-            
+            scaffoldBackgroundColor: const Color(0xFF121212),
+            cardColor: const Color(0xFF1E1E1E),
+            primaryColor: const Color(0xFF458FEA),
             colorScheme: ColorScheme.fromSeed(
               seedColor: const Color(0xFF2554A3),
               brightness: Brightness.dark,
-              primary: const Color(0xFF458FEA), // Dark mode mein primary color
-              surface: const Color(0xFF1E1E1E), // Cards ka color
+              primary: const Color(0xFF458FEA),
+              surface: const Color(0xFF1E1E1E),
+              onSurface: Colors.white,
+              onPrimary: Colors.white,
             ),
-
-            // Text Theme (White Text)
-            textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme).apply(
-              bodyColor: const Color(0xFFE0E0E0), // Off-White text (aankhon ko shubh)
+            textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme).apply(
+              bodyColor: const Color(0xFFE0E0E0),
               displayColor: Colors.white,
             ),
-
-            // AppBar Theme
             appBarTheme: const AppBarTheme(
               backgroundColor: Color(0xFF121212),
-              foregroundColor: Colors.white, // Icons white honge
+              foregroundColor: Colors.white,
               elevation: 0,
             ),
-
-            // Drawer Theme
-            drawerTheme: const DrawerThemeData(
-              backgroundColor: Color(0xFF1E1E1E), // Drawer bhi dark grey hoga
+            iconTheme: const IconThemeData(
+              color: Colors.white70,
             ),
-            
-            // Icon Theme
-            iconTheme: const IconThemeData(color: Colors.white70),
+            inputDecorationTheme: InputDecorationTheme(
+              filled: true,
+              fillColor: const Color(0xFF2C2C2C),
+              labelStyle: TextStyle(color: Colors.grey.shade400),
+              hintStyle: TextStyle(color: Colors.grey.shade600),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide.none,
+              ),
+            ),
           ),
 
-          // Start Screen
           home: const SplashScreen(),
         );
       },

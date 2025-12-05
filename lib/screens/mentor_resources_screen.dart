@@ -33,10 +33,10 @@ class _MentorResourcesScreenState extends State<MentorResourcesScreen> with Sing
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(name, style: GoogleFonts.poppins(color: Colors.black, fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.white,
+        title: Text(name, style: GoogleFonts.poppins(color: Theme.of(context).appBarTheme.foregroundColor, fontWeight: FontWeight.bold)),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: Theme.of(context).iconTheme,
         bottom: TabBar(
           controller: _tabController,
           labelColor: Colors.orange,

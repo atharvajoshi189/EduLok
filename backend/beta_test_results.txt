@@ -1,0 +1,130 @@
+--- Beta Test Results ---
+
+❓ Query: what is the formula of force
+   Tokens: [101, 9611, 8, 3, 61, 3465, 7748, 6, 3242, 556, 102, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+--- Model Input Details ---
+Name: serving_default_attention_mask:0, Index: 0, Shape: [  1 128]
+Name: serving_default_input_ids:0, Index: 1, Shape: [  1 128]
+   Vector First 5: [ 0.27173352 -0.03159758 -0.02606715  0.46801117 -0.15318778]
+   🎯 Best Match (Score: 1.0252):
+   "sal law of
+gravitation.
+2.
+Write the formula to find the
+magnitude of the gravitational
+force between the earth and an
+object on the surface of the earth.
+9.1.2 IMPORTANCE OF THE UNIVERSAL
+LAW OF GRAVITATION
+The universal law of gravitation successfully
+explained several phenomena which were
+believed to be unconnected:
+(i)
+the force that binds us to the earth;
+(ii)
+the motion of the moon around the
+earth;
+(iii)
+the motion of planets around the Sun;
+and
+(iv)
+the tides due to the moon and the Sun.
+9.2 Free Fall
+Let us try to understand the meaning of free
+fall by performing this activity.
+Activity
+9.2
+·
+Take a stone.
+·
+Throw it upwards.
+·
+It reaches a certain height and then it
+starts falling down.
+We have learnt that the earth attracts
+objects towards it. This is due to the
+gravitational force. Whenever objects fall
+towards the earth under this force alone, we
+say that the objects are in free fall. Is there any
+or
+2
+G =
+×
+F d
+M
+m
+(9.5)
+The SI unit of G can be obtained by
+substituting th"
+----------------------------------------
+
+❓ Query: what is gravity?
+   Tokens: [101, 9611, 8, 3, 61, 7393, 1789, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   Vector First 5: [ 0.3092176  -0.10049053 -0.14852513 -0.04669695 -0.46840757]
+   🎯 Best Match (Score: 0.9336):
+   "
+While a force may cause one or more
+of these effects, it is important to
+remember that none of these actions can
+take place without the action of a force.
+Thus, an object cannot move by itself,
+it cannot change speed by itself, it
+cannot change direction by itself and
+its shape cannot change by itself.
+8.6 Contact Forces
+Muscular Force
+Can you push or lift a book lying on a
+table without touching it? Can you lift
+a bucket of water without holding it?
+Generally, to apply a force on an object,
+your body has to be in contact with the
+object. The contact may also be with the
+help of a stick or a piece of rope.  When
+we push an object like a school bag or
+lift a bucket of water, where does the
+force come from? This force is caused
+by the action of muscles in our body.
+The force resulting due to the action of
+muscles is known as the muscular
+force.
+It is the muscular force that enables
+us to perform all activities involving
+movement or bending of our body. In
+Class VII you have learnt that "
+----------------------------------------
+
+❓ Query: what is democracy?
+   Tokens: [101, 9611, 8, 3, 61, 16090, 6, 1355, 102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   Vector First 5: [ 0.2495772  -0.1109844  -0.22354457 -0.04180227 -0.15151829]
+   🎯 Best Match (Score: 0.9311):
+   "Out co me s o f De mo crac y
+63
+Chapter 5
+Outcomes of 
+Democracy
+Overview
+As we begin to wind up our tour of democracy, it is time to move 
+beyond our discussion of specific themes and ask a general set of 
+questions: What does democracy do? Or, what outcomes can we 
+reasonably expect of democracy? Also, does democracy fulfil these 
+expectations in real life? We begin by thinking about how to assess 
+the outcomes of democracy. After some clarity on how to think on 
+this subject, we proceed to look at the expected and actual outcomes 
+of democracy in various respects: quality of government, economic 
+well-being, inequality, social differences and conflict and finally 
+freedom and dignity. 
+Reprint 2025-26
+
+
+64
+De moc ra tic  Polit ics
+How do we assess democracy’s outcomes?
+Do you remember how students 
+in Madam Lyngdoh’s class argued 
+about democracy? This was in 
+Chapter 2 of Class IX textbook. 
+It emerged from that conversation 
+that democracy is a better form of 
+government when comp"
+----------------------------------------

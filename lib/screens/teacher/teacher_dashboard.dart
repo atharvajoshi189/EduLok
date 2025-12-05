@@ -141,12 +141,12 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade50,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text('Dashboard', style: GoogleFonts.poppins(color: Colors.black, fontWeight: FontWeight.w600)),
-        backgroundColor: Colors.white,
+        title: Text('Dashboard', style: GoogleFonts.poppins(color: Theme.of(context).appBarTheme.foregroundColor, fontWeight: FontWeight.w600)),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: Theme.of(context).iconTheme,
         actions: [
           // Requests Icon
           Padding(
@@ -171,7 +171,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
               decoration: const BoxDecoration(color: Colors.orange),
               accountName: Text(widget.teacherName, style: GoogleFonts.poppins(fontWeight: FontWeight.bold)),
               accountEmail: Text(widget.teacherSubject, style: GoogleFonts.poppins()),
-              currentAccountPicture: const CircleAvatar(backgroundColor: Colors.white, child: Icon(Iconsax.teacher, color: Colors.orange, size: 30)),
+              currentAccountPicture: CircleAvatar(backgroundColor: Theme.of(context).cardColor, child: const Icon(Iconsax.teacher, color: Colors.orange, size: 30)),
             ),
             ListTile(
               leading: const Icon(Iconsax.logout, color: Colors.red),
@@ -187,7 +187,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Hello, ${widget.teacherName}! 👋", style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold)),
-            Text("${widget.teacherSubject} Mentor", style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey.shade600)),
+            Text("${widget.teacherSubject} Mentor", style: GoogleFonts.poppins(fontSize: 14, color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6))),
             const SizedBox(height: 25),
             Row(children: [
                 _buildAnalyticsCard(title: 'My Students', count: '${myStudents.length}', color: Colors.blueAccent, icon: Iconsax.people),
@@ -198,7 +198,7 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
             if (myStudents.isEmpty)
               Container(
                 padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(color: Colors.orange.shade50, borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.orange.shade100)),
+                decoration: BoxDecoration(color: Theme.of(context).brightness == Brightness.dark ? Colors.orange.shade900.withOpacity(0.2) : Colors.orange.shade50, borderRadius: BorderRadius.circular(12), border: Border.all(color: Colors.orange.shade100)),
                 child: Row(children: [
                     const Icon(Iconsax.info_circle, color: Colors.orange),
                     const SizedBox(width: 15),
@@ -234,6 +234,8 @@ class _TeacherDashboardState extends State<TeacherDashboard> {
       ),
     );
   }
-  Widget _buildAnalyticsCard({required String title, required String count, required Color color, required IconData icon}) { return Expanded(child: Container(padding: const EdgeInsets.all(20), decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: Colors.grey.shade200, blurRadius: 10, offset: const Offset(0, 5))]), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Icon(icon, color: color, size: 28), const SizedBox(height: 10), Text(count, style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black)), Text(title, style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey.shade600))]))); }
-  Widget _buildActionCard(IconData icon, String label, Color color) { return Container(decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16), border: Border.all(color: Colors.grey.shade200)), child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [CircleAvatar(radius: 25, backgroundColor: color.withOpacity(0.1), child: Icon(icon, size: 30, color: color)), const SizedBox(height: 12), Text(label, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500))])); }
+
+  Widget _buildAnalyticsCard({required String title, required String count, required Color color, required IconData icon}) { return Expanded(child: Container(padding: const EdgeInsets.all(20), decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(16), boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 5))]), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Icon(icon, color: color, size: 28), const SizedBox(height: 10), Text(count, style: GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge?.color)), Text(title, style: GoogleFonts.poppins(fontSize: 12, color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6)))]))); }
+  
+  Widget _buildActionCard(IconData icon, String label, Color color) { return Container(decoration: BoxDecoration(color: Theme.of(context).cardColor, borderRadius: BorderRadius.circular(16), border: Border.all(color: Theme.of(context).dividerColor.withOpacity(0.1))), child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [CircleAvatar(radius: 25, backgroundColor: color.withOpacity(0.1), child: Icon(icon, size: 30, color: color)), const SizedBox(height: 12), Text(label, style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500))])); }
 }

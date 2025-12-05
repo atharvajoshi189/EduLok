@@ -88,11 +88,11 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: Theme.of(context).iconTheme,
       ),
       body: _isLoading 
         ? const Center(child: CircularProgressIndicator())
@@ -107,7 +107,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
             Text(
               'Please tell us who you are to continue.',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.grey.shade600,
+                    color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6),
                     fontSize: 16,
                   ),
             ),
@@ -153,9 +153,9 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
         width: double.infinity,
         padding: const EdgeInsets.all(24.0),
         decoration: BoxDecoration(
-          color: Colors.grey.shade50,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: Colors.grey.shade200, width: 1.5),
+          border: Border.all(color: Theme.of(context).dividerColor.withOpacity(0.1), width: 1.5),
         ),
         child: Row(
           children: [
@@ -170,7 +170,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: Colors.grey.shade900,
+                      color: Theme.of(context).textTheme.bodyLarge?.color,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -179,7 +179,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
-                      color: Colors.grey.shade600,
+                      color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6),
                     ),
                   ),
                 ],

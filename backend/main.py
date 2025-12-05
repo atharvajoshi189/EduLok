@@ -3,12 +3,23 @@ from sqlalchemy.orm import Session
 from . import models, schemas, database, auth
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware # CORS import
+from . import models, schemas, database, auth, chat_service
+from pydantic import BaseModel
+from typing import Optional
+
+class ChatRequest(BaseModel):
+    query: str
+    subject: Optional[str] = None
 
 # 1. Database tables banana
 models.Base.metadata.create_all(bind=database.engine)
 
 # FastAPI app instance
 app = FastAPI()
+
+@app.on_event("startup")
+async def startup_event():
+    chat_service.initialize()
 
 # --- CORS Middleware (To allow Flutter app to call API) ---
 origins = ["*"]
@@ -35,6 +46,11 @@ def get_db():
 @app.get("/")
 def read_root():
     return {"message": "EduLok Backend API v1.0"}
+
+@app.post("/chat")
+def chat_endpoint(request: ChatRequest):
+    response = chat_service.get_response(request.query, request.subject)
+    return {"answer": response}
 
 # --- Stage 2 & 3: Mobile/OTP Authentication ---
 

@@ -4,8 +4,13 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   connectivity_plus
+  file_selector_windows
   flutter_inappwebview_windows
+  flutter_tts
   objectbox_flutter_libs
+  permission_handler_windows
+  speech_to_text_windows
+  url_launcher_windows
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

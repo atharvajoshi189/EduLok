@@ -100,6 +100,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             name: name, 
             onboarded: true
         );
+        
+        // Save Class Persistence
+        if (_selectedClass != null) {
+          await AuthService.saveClass("Class $_selectedClass");
+        }
 
         if (mounted) {
           Navigator.of(context).pushReplacement(
@@ -145,7 +150,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -250,7 +255,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           style: GoogleFonts.poppins(
             fontSize: 28,
             fontWeight: FontWeight.bold,
-            color: Colors.black87,
+            color: Theme.of(context).textTheme.bodyLarge?.color,
           ),
         ),
         const SizedBox(height: 12),
@@ -278,7 +283,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       width: double.infinity,
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -296,7 +301,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             style: GoogleFonts.poppins(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: Colors.black87,
+              color: Theme.of(context).textTheme.bodyLarge?.color,
             ),
           ),
           const SizedBox(height: 16),
@@ -318,7 +323,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: isSelected ? Theme.of(context).colorScheme.primary.withOpacity(0.1) : Colors.white,
+          color: isSelected ? Theme.of(context).colorScheme.primary.withOpacity(0.1) : Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected ? Theme.of(context).colorScheme.primary : Colors.grey.shade300,
@@ -336,7 +341,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               style: GoogleFonts.poppins(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                color: isSelected ? Theme.of(context).colorScheme.primary : Colors.grey.shade800,
+                color: isSelected ? Theme.of(context).colorScheme.primary : Theme.of(context).textTheme.bodyMedium?.color,
               ),
             ),
           ],
@@ -358,7 +363,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         height: 50,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isSelected ? Theme.of(context).colorScheme.primary : Colors.grey.shade100,
+          color: isSelected ? Theme.of(context).colorScheme.primary : Theme.of(context).cardColor,
           border: Border.all(color: isSelected ? Colors.transparent : Colors.grey.shade300),
         ),
         alignment: Alignment.center,
@@ -367,7 +372,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.bold,
             fontSize: 16,
-            color: isSelected ? Colors.white : Colors.black87,
+            color: isSelected ? Colors.white : Theme.of(context).textTheme.bodyLarge?.color,
           ),
         ),
       ),
@@ -390,7 +395,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: isSelected ? Theme.of(context).colorScheme.primary.withOpacity(0.1) : Colors.white,
+          color: isSelected ? Theme.of(context).colorScheme.primary.withOpacity(0.1) : Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected ? Theme.of(context).colorScheme.primary : Colors.grey.shade300,
@@ -410,7 +415,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               style: GoogleFonts.poppins(
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
-                color: isSelected ? Theme.of(context).colorScheme.primary : Colors.grey.shade800,
+                color: isSelected ? Theme.of(context).colorScheme.primary : Theme.of(context).textTheme.bodyMedium?.color,
               ),
             ),
           ],

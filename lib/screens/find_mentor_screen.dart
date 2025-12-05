@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:eduthon/services/database_helper.dart';
 import 'package:eduthon/services/auth_service.dart';
+import 'package:eduthon/services/language_service.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -101,11 +102,11 @@ class _FindMentorScreenState extends State<FindMentorScreen> {
 
           if (response.statusCode == 200) {
              ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text("Request sent to ${selectedMentor['name']}!"), backgroundColor: Colors.green)
+              SnackBar(content: Text("${AppLocalizations.of(context)?.translate('requestSent') ?? 'Request sent!'} (${selectedMentor['name']})"), backgroundColor: Colors.green)
             );
           } else {
              ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("Failed to send request"), backgroundColor: Colors.red)
+              SnackBar(content: Text(AppLocalizations.of(context)?.translate('failedToSend') ?? "Failed to send request"), backgroundColor: Colors.red)
             );
           }
         }
@@ -117,7 +118,7 @@ class _FindMentorScreenState extends State<FindMentorScreen> {
         );
         
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Offline: Request to ${selectedMentor['name']} queued."), backgroundColor: Colors.orange)
+          SnackBar(content: Text(AppLocalizations.of(context)?.translate('offlineRequestQueued') ?? "Offline: Request queued."), backgroundColor: Colors.orange)
         );
       }
 
@@ -135,10 +136,13 @@ class _FindMentorScreenState extends State<FindMentorScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Localized Filter List
+    final filters = ["All", "Physics", "Maths", "Chemistry", "Biology"];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Find a Mentor', 
+          AppLocalizations.of(context)?.translate('findMentor') ?? 'Find a Mentor', 
           style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyLarge?.color, fontWeight: FontWeight.bold)
         ),
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
@@ -157,9 +161,10 @@ class _FindMentorScreenState extends State<FindMentorScreen> {
               children: [
                 TextField(
                   decoration: InputDecoration(
-                    hintText: "Search...", 
+                    hintText: AppLocalizations.of(context)?.translate('search') ?? "Search...", 
                     prefixIcon: const Icon(Iconsax.search_normal), 
                     filled: true, 
+                    fillColor: Theme.of(context).inputDecorationTheme.fillColor,
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none)
                   ),
                   onChanged: (val) {
@@ -176,14 +181,18 @@ class _FindMentorScreenState extends State<FindMentorScreen> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: ["All", "Physics", "Maths", "Chemistry", "Biology"].map((subject) {
+                    children: filters.map((subject) {
                       bool isSelected = _selectedFilter == subject;
+                      // Translate subject for display, but keep logic key if needed (here logic uses display name)
+                      // Ideally logic should use keys, but for now we translate display
+                      String displaySubject = AppLocalizations.of(context)?.translate(subject.toLowerCase()) ?? subject;
+                      
                       return Padding(
                         padding: const EdgeInsets.only(right: 8.0), 
                         child: ChoiceChip(
-                          label: Text(subject), 
+                          label: Text(displaySubject), 
                           selected: isSelected, 
-                          onSelected: (_) => _applyFilter(subject)
+                          onSelected: (_) => _applyFilter(subject) // Logic uses original English key
                         )
                       );
                     }).toList(),
@@ -196,7 +205,7 @@ class _FindMentorScreenState extends State<FindMentorScreen> {
             child: _isLoading 
               ? const Center(child: CircularProgressIndicator()) 
               : _filteredMentors.isEmpty
-                  ? const Center(child: Text("No mentors found."))
+                  ? Center(child: Text(AppLocalizations.of(context)?.translate('noMentorsFound') ?? "No mentors found."))
                   : ListView.builder(
                       padding: const EdgeInsets.all(16),
                       itemCount: _filteredMentors.length,
@@ -215,7 +224,7 @@ class _FindMentorScreenState extends State<FindMentorScreen> {
                             subtitle: Text("$subject • $exp Exp"),
                             trailing: ElevatedButton(
                               onPressed: () => _toggleConnection(index),
-                              child: const Text("Connect"),
+                              child: Text(AppLocalizations.of(context)?.translate('connect') ?? "Connect"),
                             ),
                           ),
                         );

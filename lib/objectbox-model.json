@@ -31,17 +31,65 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "3:5448814483963918071",
+      "lastPropertyId": "6:7830701307169794569",
+      "name": "BookChunk",
+      "properties": [
+        {
+          "id": "1:8713072444068656933",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8268890686196387127",
+          "name": "classNum",
+          "type": 6
+        },
+        {
+          "id": "3:3880371378223255677",
+          "name": "subject",
+          "type": 9
+        },
+        {
+          "id": "4:7926644879929620824",
+          "name": "chapter",
+          "type": 9
+        },
+        {
+          "id": "5:4216315656908975543",
+          "name": "text",
+          "type": 9
+        },
+        {
+          "id": "6:7830701307169794569",
+          "name": "vector",
+          "type": 29
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:6811350421697420067",
+  "lastEntityId": "3:5448814483963918071",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,
-  "retiredEntityUids": [],
+  "retiredEntityUids": [
+    3006485186266103677
+  ],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    2674938733516278295,
+    3611974506407585575,
+    8037076950516932795,
+    1640175033554998154,
+    1528973485826426193,
+    6355302076090482301
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

@@ -63,3 +63,6 @@ assets/ai/clean_knowledge.json
 assets/ai/vectors.json
 assets/ai/labse_savedmodel/
 assets/ai/LaBSE.tflite
+assets/data/initial_data.json
+venv/
+*.db

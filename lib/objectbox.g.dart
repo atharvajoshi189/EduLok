@@ -15,6 +15,7 @@ import 'package:objectbox/internal.dart'
 import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
+import 'models/book_chunk.dart';
 import 'models/text_chunk.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
@@ -43,6 +44,45 @@ final _entities = <obx_int.ModelEntity>[
             flags: 0),
         obx_int.ModelProperty(
             id: const obx_int.IdUid(4, 2181026966474333055),
+            name: 'vector',
+            type: 29,
+            flags: 0)
+      ],
+      relations: <obx_int.ModelRelation>[],
+      backlinks: <obx_int.ModelBacklink>[]),
+  obx_int.ModelEntity(
+      id: const obx_int.IdUid(3, 5448814483963918071),
+      name: 'BookChunk',
+      lastPropertyId: const obx_int.IdUid(6, 7830701307169794569),
+      flags: 0,
+      properties: <obx_int.ModelProperty>[
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(1, 8713072444068656933),
+            name: 'id',
+            type: 6,
+            flags: 1),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(2, 8268890686196387127),
+            name: 'classNum',
+            type: 6,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(3, 3880371378223255677),
+            name: 'subject',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(4, 7926644879929620824),
+            name: 'chapter',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(5, 4216315656908975543),
+            name: 'text',
+            type: 9,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(6, 7830701307169794569),
             name: 'vector',
             type: 29,
             flags: 0)
@@ -86,13 +126,20 @@ Future<obx.Store> openStore(
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
       entities: _entities,
-      lastEntityId: const obx_int.IdUid(1, 6811350421697420067),
+      lastEntityId: const obx_int.IdUid(3, 5448814483963918071),
       lastIndexId: const obx_int.IdUid(0, 0),
       lastRelationId: const obx_int.IdUid(0, 0),
       lastSequenceId: const obx_int.IdUid(0, 0),
-      retiredEntityUids: const [],
+      retiredEntityUids: const [3006485186266103677],
       retiredIndexUids: const [],
-      retiredPropertyUids: const [],
+      retiredPropertyUids: const [
+        2674938733516278295,
+        3611974506407585575,
+        8037076950516932795,
+        1640175033554998154,
+        1528973485826426193,
+        6355302076090482301
+      ],
       retiredRelationUids: const [],
       modelVersion: 5,
       modelVersionParserMinimum: 5,
@@ -136,6 +183,55 @@ obx_int.ModelDefinition getObjectBoxModel() {
             ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
 
           return object;
+        }),
+    BookChunk: obx_int.EntityDefinition<BookChunk>(
+        model: _entities[1],
+        toOneRelations: (BookChunk object) => [],
+        toManyRelations: (BookChunk object) => {},
+        getId: (BookChunk object) => object.id,
+        setId: (BookChunk object, int id) {
+          object.id = id;
+        },
+        objectToFB: (BookChunk object, fb.Builder fbb) {
+          final subjectOffset = fbb.writeString(object.subject);
+          final chapterOffset = fbb.writeString(object.chapter);
+          final textOffset = fbb.writeString(object.text);
+          final vectorOffset = fbb.writeListFloat64(object.vector);
+          fbb.startTable(7);
+          fbb.addInt64(0, object.id);
+          fbb.addInt64(1, object.classNum);
+          fbb.addOffset(2, subjectOffset);
+          fbb.addOffset(3, chapterOffset);
+          fbb.addOffset(4, textOffset);
+          fbb.addOffset(5, vectorOffset);
+          fbb.finish(fbb.endTable());
+          return object.id;
+        },
+        objectFromFB: (obx.Store store, ByteData fbData) {
+          final buffer = fb.BufferContext(fbData);
+          final rootOffset = buffer.derefObject(0);
+          final idParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final classNumParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 6, 0);
+          final subjectParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 8, '');
+          final chapterParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 10, '');
+          final textParam = const fb.StringReader(asciiOptimization: true)
+              .vTableGet(buffer, rootOffset, 12, '');
+          final vectorParam =
+              const fb.ListReader<double>(fb.Float64Reader(), lazy: false)
+                  .vTableGet(buffer, rootOffset, 14, []);
+          final object = BookChunk(
+              id: idParam,
+              classNum: classNumParam,
+              subject: subjectParam,
+              chapter: chapterParam,
+              text: textParam,
+              vector: vectorParam);
+
+          return object;
         })
   };
 
@@ -159,4 +255,31 @@ class TextChunk_ {
   /// see [TextChunk.vector]
   static final vector =
       obx.QueryDoubleVectorProperty<TextChunk>(_entities[0].properties[3]);
+}
+
+/// [BookChunk] entity fields to define ObjectBox queries.
+class BookChunk_ {
+  /// see [BookChunk.id]
+  static final id =
+      obx.QueryIntegerProperty<BookChunk>(_entities[1].properties[0]);
+
+  /// see [BookChunk.classNum]
+  static final classNum =
+      obx.QueryIntegerProperty<BookChunk>(_entities[1].properties[1]);
+
+  /// see [BookChunk.subject]
+  static final subject =
+      obx.QueryStringProperty<BookChunk>(_entities[1].properties[2]);
+
+  /// see [BookChunk.chapter]
+  static final chapter =
+      obx.QueryStringProperty<BookChunk>(_entities[1].properties[3]);
+
+  /// see [BookChunk.text]
+  static final text =
+      obx.QueryStringProperty<BookChunk>(_entities[1].properties[4]);
+
+  /// see [BookChunk.vector]
+  static final vector =
+      obx.QueryDoubleVectorProperty<BookChunk>(_entities[1].properties[5]);
 }

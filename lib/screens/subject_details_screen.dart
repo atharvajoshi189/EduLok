@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:eduthon/screens/chapter_content_screen.dart';
+import 'package:eduthon/services/language_service.dart';
 
 class SubjectDetailsScreen extends StatefulWidget {
   final String subjectName;
@@ -75,11 +76,11 @@ class _SubjectDetailsScreenState extends State<SubjectDetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "${chapters.length} Chapters",
+                          "${chapters.length} ${AppLocalizations.of(context)?.translate('chapters') ?? 'Chapters'}",
                           style: GoogleFonts.poppins(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Tap to start learning",
+                          AppLocalizations.of(context)?.translate('tapToStart') ?? "Tap to start learning",
                           style: GoogleFonts.poppins(color: Colors.white70, fontSize: 12),
                         ),
                       ],
@@ -111,7 +112,7 @@ class _SubjectDetailsScreenState extends State<SubjectDetailsScreen> {
                   children: [
                     Icon(Iconsax.book, size: 50, color: Colors.grey.shade300),
                     const SizedBox(height: 10),
-                    Text("No chapters added yet.", style: GoogleFonts.poppins(color: Colors.grey)),
+                    Text(AppLocalizations.of(context)?.translate('noChapters') ?? "No chapters added yet.", style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.5))),
                   ],
                 ),
               )
@@ -183,7 +184,7 @@ class _SubjectDetailsScreenState extends State<SubjectDetailsScreen> {
                 children: [
                   Text(
                     chapter['title'],
-                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 15),
+                    style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 15, color: Theme.of(context).textTheme.bodyLarge?.color),
                   ),
                   Text(
                     chapter['desc'],

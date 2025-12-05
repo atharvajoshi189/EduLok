@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-// --- SCREEN IMPORTS ---
+// SERVICES
+import 'package:eduthon/services/auth_service.dart';
+import 'package:eduthon/services/database_helper.dart';
+import 'package:eduthon/services/language_service.dart';
+
+// SCREENS
 import 'package:eduthon/screens/dashboard_screen.dart';
 import 'package:eduthon/screens/quiz_list_screen.dart';
-import 'package:eduthon/screens/mentor_screen.dart'; // Mentor Screen (Lock/Unlock logic isme hai)
+import 'package:eduthon/screens/mentor_screen.dart';
+import 'package:eduthon/screens/ai_hub_screen.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -15,10 +23,60 @@ class MainLayout extends StatefulWidget {
 
 class _MainLayoutState extends State<MainLayout> {
   int _selectedIndex = 0;
-  final String _userClass = "Class 10"; 
+  String _userClass = "Class 10"; 
 
-  // --- MENTOR STATE (App-wide State) ---
-  Map<String, dynamic>? _selectedMentor;
+  // --- MENTOR STATE ---
+  List<dynamic> _myMentors = [];
+  List<dynamic> _sentRequests = [];
+  
+  @override
+  void initState() {
+    super.initState();
+    _loadUserClass();
+    _fetchMentorData();
+  }
+
+  Future<void> _loadUserClass() async {
+    final savedClass = await AuthService.getClass();
+    if (savedClass != null) {
+      setState(() {
+        _userClass = savedClass;
+      });
+    }
+  }
+
+  Future<void> _fetchMentorData() async {
+    try {
+      final token = await AuthService.getAuthToken();
+      if (token != null) {
+        final responseMentors = await http.get(
+          Uri.parse('http://192.168.1.4:8000/mentorship/mentors'),
+          headers: {'Authorization': 'Bearer $token'},
+        );
+        final responseRequests = await http.get(
+          Uri.parse('http://192.168.1.4:8000/mentorship/requests/sent'),
+          headers: {'Authorization': 'Bearer $token'},
+        );
+
+        if (responseMentors.statusCode == 200) {
+          final List<dynamic> data = json.decode(responseMentors.body);
+          await DatabaseHelper.instance.saveMyMentors(data);
+          setState(() => _myMentors = data);
+        }
+        if (responseRequests.statusCode == 200) {
+          setState(() => _sentRequests = json.decode(responseRequests.body));
+        }
+      }
+    } catch (e) {
+      print("Network Error: $e");
+    }
+
+    // Offline Fallback
+    final localMentors = await DatabaseHelper.instance.getMyMentors();
+    if (mounted && _myMentors.isEmpty) {
+      setState(() => _myMentors = localMentors);
+    }
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -26,75 +84,71 @@ class _MainLayoutState extends State<MainLayout> {
     });
   }
 
-  // Dashboard se Mentor update hoga to yahan state change hogi
-  void _updateMentor(Map<String, dynamic>? newMentor) {
-    setState(() {
-      _selectedMentor = newMentor;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    // --- LIST OF SCREENS ---
+    bool hasActiveMentor = _myMentors.isNotEmpty;
+
     final List<Widget> widgetOptions = <Widget>[
-      // 1. Dashboard (Pass State & Updater)
+      // 0. Dashboard
       DashboardScreen(
-        selectedMentor: _selectedMentor,
-        onMentorChanged: _updateMentor,
+        onClassChanged: (newClass) {
+          setState(() {
+            _userClass = newClass;
+          });
+        },
       ),
       
-      // 2. Quizzes
+      // 1. Quizzes
       QuizListScreen(className: _userClass), 
       
-      // 3. My Mentor Tab (Bottom Nav wala)
-      // Ye automatically check karega ki _selectedMentor null hai ya nahi
-      // Null hua to Lock dikhayega, Data hua to Dashboard dikhayega.
-      MentorScreen(currentMentor: _selectedMentor), 
+      // 2. Mentor Tab
+      MentorScreen(
+        myMentors: _myMentors, 
+        sentRequests: _sentRequests, 
+        onRefresh: _fetchMentorData
+      ), 
       
-      // 4. Profile
-      const Center(child: Text('Profile Settings Coming Soon')),
+      // 3. AI Hub
+      const AIHubScreen(),
     ];
 
     return Scaffold(
       body: widgetOptions.elementAt(_selectedIndex),
       
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          // Tab 0
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Iconsax.home_2),
-            activeIcon: Icon(Iconsax.home_25),
-            label: 'Study',
+            icon: const Icon(Iconsax.home_2),
+            activeIcon: const Icon(Iconsax.home_25),
+            label: AppLocalizations.of(context)?.translate('study') ?? 'Study',
           ),
-          
-          // Tab 1
           BottomNavigationBarItem(
-            icon: Icon(Iconsax.task_square),
-            activeIcon: Icon(Iconsax.task_square5),
-            label: 'Quizzes',
+            icon: const Icon(Iconsax.task_square),
+            activeIcon: const Icon(Iconsax.task_square5),
+            label: AppLocalizations.of(context)?.translate('quizzes') ?? 'Quizzes',
           ),
-          
-          // Tab 2: MENTOR SECTION (Yahan chahiye tha aapko)
           BottomNavigationBarItem(
-            icon: Icon(Iconsax.teacher),
-            activeIcon: Icon(Iconsax.teacher5),
-            label: 'My Mentor',
+            icon: hasActiveMentor 
+                ? const Icon(Iconsax.teacher) 
+                : const Icon(Iconsax.lock), 
+            activeIcon: hasActiveMentor 
+                ? const Icon(Iconsax.teacher5) 
+                : const Icon(Iconsax.lock_1),
+            label: AppLocalizations.of(context)?.translate('mentor') ?? 'Mentor',
           ),
-          
-          // Tab 3
           BottomNavigationBarItem(
-            icon: Icon(Iconsax.user),
-            activeIcon: Icon(Iconsax.user5),
-            label: 'Profile',
+            icon: const Icon(Iconsax.magic_star),
+            activeIcon: const Icon(Iconsax.magic_star5),
+            label: "AI",
           ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: const Color(0xFF2554A3),
-        unselectedItemColor: Colors.grey.shade600,
+        selectedItemColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Theme.of(context).iconTheme.color?.withOpacity(0.6),
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 10,
       ),
     );

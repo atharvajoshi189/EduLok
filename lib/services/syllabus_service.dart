@@ -1,46 +1,30 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle; // rootBundle ke liye
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:eduthon/services/data_manager.dart';
 
 class SyllabusService {
   static final SyllabusService _instance = SyllabusService._internal();
   factory SyllabusService() => _instance;
   SyllabusService._internal();
 
-  Map<String, dynamic>? _masterData;
-
-  static Null get instance => null;
-
   // --- 1. INITIALIZATION ---
+  // No longer needed as DataManager handles loading, but keeping for compatibility if called
   Future<void> init() async {
-    if (_masterData != null) return;
-
-    try {
-      final String response = await rootBundle.loadString('assets/content/master_syllabus.json');
-      _masterData = json.decode(response);
-      print("✅ EduLok Syllabus Engine Loaded!");
-    } catch (e) {
-      print("❌ Error loading master_syllabus.json: $e");
-      _masterData = {};
-    }
+    // DataManager.loadSyllabus() is called in main.dart
   }
 
-  // --- 2. GET SUBJECTS (FIXED) ---
+  // --- 2. GET SUBJECTS (LINKED TO DATA MANAGER) ---
   List<Map<String, dynamic>> getSubjectsForClass(String className) {
-    if (_masterData == null || !_masterData!.containsKey(className)) {
-      return [];
-    }
-
-    List<dynamic> rawList = _masterData![className]['subjects'];
+    // Fetch raw data from DataManager
+    List<dynamic> rawList = DataManager.getSubjects(className);
 
     return rawList.map((subject) {
       return {
         'name': subject['name'],
         'chapters': subject['chapters'],
-        
-        // 🔥 ERROR FIX: 'as String' lagana zaroori hai
         'icon': _getIcon(subject['icon'] as String), 
         'color': _parseColor(subject['color'] as String), 
       };

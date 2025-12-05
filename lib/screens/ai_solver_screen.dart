@@ -1,207 +1,323 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:eduthon/theme/app_colors.dart';
-import 'package:eduthon/services/ai_service.dart'; // AI Service Import
+import 'package:eduthon/services/offline_service.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'dart:io';
+import 'package:flutter_tex/flutter_tex.dart';
+import 'package:eduthon/services/language_service.dart';
+import 'package:eduthon/services/history_service.dart';
+import 'package:eduthon/widgets/history_drawer.dart';
 
 class AiSolverScreen extends StatefulWidget {
-  const AiSolverScreen({super.key});
+  final String? initialSessionId;
+  const AiSolverScreen({super.key, this.initialSessionId});
 
   @override
   State<AiSolverScreen> createState() => _AiSolverScreenState();
 }
 
 class _AiSolverScreenState extends State<AiSolverScreen> {
-  final TextEditingController _controller = TextEditingController();
-  final ScrollController _scrollController = ScrollController();
-  
-  // Chat Messages List (Initial greeting)
-  final List<Map<String, String>> _messages = [
-    {
-      'role': 'bot', 
-      'text': 'Hello! I am EduLok AI. Ask me anything from your downloaded textbooks, or just say Hi!'
-    }
-  ];
+  String? _imagePath;
+  String? _extractedText;
+  String? _solution;
+  bool _isLoading = false;
+  String? _sessionId;
 
-  bool _isSearching = false;
-
-  // --- Send Message Function (Connected to Smart Brain) ---
-  Future<void> _sendMessage() async {
-    final query = _controller.text.trim();
-    if (query.isEmpty) return;
-
-    // 1. User ka message add karein
-    setState(() {
-      _messages.add({'role': 'user', 'text': query});
-      _isSearching = true; // Loading start
-    });
-    
-    _controller.clear();
-    _scrollToBottom(); 
-
-    try {
-      // 2. AI Service se "Chat" karein (UPDATED FUNCTION NAME)
-      // Humne 'getChatResponse' ko 'askEduLok' se replace kiya hai
-      final String response = await AIService().askEduLok(query);
-
-      // 3. Bot ka response add karein
-      if (mounted) {
-        setState(() {
-          _messages.add({'role': 'bot', 'text': response});
-        });
-      }
-
-    } catch (e) {
-      print("❌ Error in UI: $e");
-      if (mounted) {
-        setState(() {
-          _messages.add({
-            'role': 'bot', 
-            'text': "My brain feels a bit fuzzy (Error). Please try asking again."
-          });
-        });
-      }
-    } finally {
-      // 4. Loading band karein
-      if (mounted) {
-        setState(() {
-          _isSearching = false;
-        });
-        _scrollToBottom();
-      }
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialSessionId != null) {
+      _loadHistory(widget.initialSessionId!);
     }
   }
 
-  // Helper: Auto-scroll to newest message
-  void _scrollToBottom() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scrollController.hasClients) {
-        _scrollController.animateTo(
-          _scrollController.position.maxScrollExtent,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeOut,
-        );
+  Future<void> _loadHistory(String sessionId) async {
+    final messages = await HistoryService().getMessages(sessionId);
+    if (messages.isNotEmpty) {
+      final msg = messages.first; // Scan session has 1 message usually
+      setState(() {
+        _sessionId = sessionId;
+        _extractedText = msg['content']; // We store question in content? Or solution?
+        // Wait, the schema says: content (String), image_path (String).
+        // For scan, we probably stored solution in content.
+        // Let's assume content is solution, but we also need extracted text.
+        // The current schema doesn't have a separate field for extracted text.
+        // Maybe we can store extracted text in content, and solution in a second message?
+        // Or store "Question: ... \n\n Solution: ..." in content.
+        // Let's check how I plan to save it.
+        
+        // Plan: "Save Scan Results: ... save Image Path + Answer."
+        // So content = Answer (Solution).
+        // Where is extracted text?
+        // Maybe I should append it to the answer or just rely on the image.
+        // Let's store solution in content.
+        _solution = msg['content'];
+        _imagePath = msg['image_path'];
+      });
+    }
+  }
+
+  Future<void> _pickImage() async {
+    try {
+      final picker = ImagePicker();
+      final pickedFile = await picker.pickImage(source: ImageSource.camera);
+
+      if (pickedFile != null) {
+        _cropImage(pickedFile.path);
       }
-    });
+    } catch (e) {
+      debugPrint("Error picking image: $e");
+    }
+  }
+
+  Future<void> _cropImage(String path) async {
+    final croppedFile = await ImageCropper().cropImage(
+      sourcePath: path,
+      uiSettings: [
+        AndroidUiSettings(
+          toolbarTitle: 'Crop Question',
+          toolbarColor: const Color(0xFF2554A3),
+          toolbarWidgetColor: Colors.white,
+          initAspectRatio: CropAspectRatioPreset.original,
+          lockAspectRatio: false,
+        ),
+        IOSUiSettings(
+          title: 'Crop Question',
+        ),
+      ],
+    );
+
+    if (croppedFile != null) {
+      setState(() {
+        _imagePath = croppedFile.path;
+        _extractedText = null;
+        _solution = null;
+        _isLoading = true;
+        _sessionId = null; // Reset session for new scan
+      });
+      _processImage(croppedFile.path);
+    }
+  }
+
+  Future<void> _processImage(String path) async {
+    try {
+      // 1. Perform OCR
+      final text = await OfflineService().performOCR(path);
+      
+      if (text.isEmpty) {
+        setState(() {
+          _isLoading = false;
+          _extractedText = "Could not extract text. Please try again.";
+        });
+        return;
+      }
+
+      setState(() {
+        _extractedText = text;
+      });
+
+      // 2. Solve Offline
+      final solution = await OfflineService().solveOfflineDoubt(text);
+
+      setState(() {
+        _isLoading = false;
+        _solution = solution;
+      });
+
+      // 3. Save to History
+      await _saveToHistory(path, text, solution);
+
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+        _solution = "Error: $e";
+      });
+    }
+  }
+
+  Future<void> _saveToHistory(String imagePath, String question, String solution) async {
+    // Title: "Scan: [Date]" or "Scan: [First few words of question]"
+    String title = "Scan: ${question.length > 20 ? question.substring(0, 20) + '...' : question}";
+    
+    _sessionId = await HistoryService().createSession(title, 'scan');
+    
+    // We save the solution as content. We could prepend the question if we want.
+    // Let's save: "Question: $question\n\nSolution:\n$solution"
+    String content = "Question: $question\n\n$solution";
+    
+    await HistoryService().addMessage(_sessionId!, 'bot', content, imagePath: imagePath);
   }
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      
-      // --- Top Bar ---
-      appBar: AppBar(
-        title: Text(
-          'AI Doubt Solver', 
-          style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyLarge?.color, fontWeight: FontWeight.w600),
-        ),
-        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-        elevation: 1,
-        iconTheme: Theme.of(context).iconTheme,
-        leading: IconButton(
-          icon: const Icon(Iconsax.arrow_left_2),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+      backgroundColor: Colors.grey[50],
+      drawer: HistoryDrawer(
+        onSessionSelected: (sessionId, type) {
+          if (type == 'scan') {
+            _loadHistory(sessionId);
+          } else {
+            // Handle chat history if needed
+          }
+        },
       ),
+      appBar: AppBar(
+        title: Text(AppLocalizations.of(context)?.translate('aiDoubtSolver') ?? "AI Doubt Solver", 
+          style: GoogleFonts.outfit(color: Colors.black, fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Iconsax.menu_1, color: Colors.black),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.black),
+      ),
+      body: _imagePath == null 
+          ? _buildPlaceholder()
+          : _buildResultView(),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _pickImage,
+        backgroundColor: const Color(0xFF2554A3),
+        icon: const Icon(Iconsax.camera),
+        label: Text("Scan New", style: GoogleFonts.outfit(fontWeight: FontWeight.bold)),
+      ),
+    );
+  }
 
-      body: Column(
+  Widget _buildPlaceholder() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // --- Chat List Area ---
-          Expanded(
-            child: ListView.builder(
-              controller: _scrollController,
-              padding: const EdgeInsets.all(16),
-              itemCount: _messages.length,
-              itemBuilder: (context, index) {
-                final msg = _messages[index];
-                final isUser = msg['role'] == 'user';
-                
-                return Align(
-                  alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 12),
-                    padding: const EdgeInsets.all(14),
-                    constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.8),
-                    decoration: BoxDecoration(
-                      color: isUser ? AppColors.teal : (isDark ? Theme.of(context).cardColor : Colors.white),
-                      borderRadius: BorderRadius.circular(16).copyWith(
-                        bottomRight: isUser ? const Radius.circular(0) : null,
-                        bottomLeft: !isUser ? const Radius.circular(0) : null,
-                      ),
-                      boxShadow: [
-                        if (!isUser)
-                          BoxShadow(color: Colors.grey.withOpacity(0.1), blurRadius: 5, offset: const Offset(0, 2))
+          Container(
+            padding: const EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              color: const Color(0xFF2554A3).withOpacity(0.1),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Iconsax.camera, size: 60, color: Color(0xFF2554A3)),
+          ),
+          const SizedBox(height: 20),
+          Text(
+            "Tap Camera to Scan",
+            style: GoogleFonts.outfit(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black87),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            "Get instant offline solutions",
+            style: GoogleFonts.outfit(fontSize: 14, color: Colors.grey),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildResultView() {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // 1. Image Card
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              image: DecorationImage(
+                image: FileImage(File(_imagePath!)),
+                fit: BoxFit.cover,
+              ),
+              boxShadow: [
+                BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, offset: const Offset(0, 4))
+              ]
+            ),
+          ),
+          const SizedBox(height: 20),
+
+          if (_isLoading)
+            const Center(child: CircularProgressIndicator())
+          else ...[
+            // 2. Extracted Question Card (Only show if we have extracted text separately or parsed from content)
+            if (_extractedText != null)
+            Card(
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+                side: BorderSide(color: Colors.grey.shade200)
+              ),
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Iconsax.text_block, size: 18, color: Colors.orange),
+                        const SizedBox(width: 8),
+                        Text("Extracted Question", style: GoogleFonts.outfit(fontWeight: FontWeight.bold, color: Colors.grey[700])),
                       ],
                     ),
-                    child: Text(
-                      msg['text']!,
-                      style: GoogleFonts.poppins(
-                        color: isUser ? Colors.white : Theme.of(context).textTheme.bodyLarge?.color,
-                        fontSize: 15,
-                        height: 1.4, 
-                      ),
+                    const SizedBox(height: 8),
+                    Text(
+                      _extractedText ?? "...",
+                      style: GoogleFonts.outfit(fontSize: 14, color: Colors.black87),
                     ),
-                  ),
-                );
-              },
-            ),
-          ),
-
-          // --- Thinking Indicator ---
-          if (_isSearching)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              child: Row(
-                children: [
-                  const SizedBox(width: 15, height: 15, child: CircularProgressIndicator(strokeWidth: 2, color: AppColors.teal)),
-                  const SizedBox(width: 10),
-                  Text("EduLok is checking books...", style: GoogleFonts.poppins(color: Colors.grey, fontSize: 12, fontStyle: FontStyle.italic)),
-                ],
+                  ],
+                ),
               ),
             ),
+            const SizedBox(height: 16),
 
-          // --- Input Field Area ---
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
-              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10, offset: const Offset(0, -2))],
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: _controller,
-                    textCapitalization: TextCapitalization.sentences, 
-                    style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyLarge?.color),
-                    decoration: InputDecoration(
-                      hintText: 'Ask a doubt...',
-                      hintStyle: GoogleFonts.poppins(color: Colors.grey.shade400),
-                      filled: true,
-                      fillColor: isDark ? Theme.of(context).scaffoldBackgroundColor : AppColors.background,
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30), borderSide: BorderSide.none),
+            // 3. Solution Card
+            Card(
+              elevation: 4,
+              shadowColor: const Color(0xFF2554A3).withOpacity(0.2),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Iconsax.magic_star, color: Color(0xFF2554A3)),
+                        const SizedBox(width: 10),
+                        Text("Solution", style: GoogleFonts.outfit(fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xFF2554A3))),
+                      ],
                     ),
-                    onSubmitted: (_) => _sendMessage(),
-                  ),
+                    const Divider(height: 24),
+                    if (_solution != null && _solution!.startsWith("Offline Solution"))
+                      Text(
+                        _solution!,
+                        style: GoogleFonts.outfit(fontSize: 16, color: Colors.black87, height: 1.5),
+                      )
+                    else
+                      TeXView(
+                        child: TeXViewColumn(children: [
+                          TeXViewDocument(_solution ?? "No solution found.", 
+                            style: TeXViewStyle(
+                              fontStyle: TeXViewFontStyle(fontFamily: 'Outfit', fontSize: 16),
+                              contentColor: Colors.black87
+                            )
+                          )
+                        ]),
+                        style: const TeXViewStyle(
+                          elevation: 0,
+                          backgroundColor: Colors.white,
+                        ),
+                      ),
+                  ],
                 ),
-                const SizedBox(width: 12),
-                
-                // Send Button
-                CircleAvatar(
-                  backgroundColor: AppColors.indigo,
-                  radius: 24,
-                  child: IconButton(
-                    icon: const Icon(Iconsax.send_1, color: Colors.white, size: 22),
-                    onPressed: _isSearching ? null : _sendMessage,
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
+            const SizedBox(height: 80), // Space for FAB
+          ]
         ],
       ),
     );

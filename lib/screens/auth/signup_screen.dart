@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:eduthon/screens/otp_screen.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:eduthon/services/language_service.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key, required void Function() onLoginTap});
@@ -98,7 +99,7 @@ class _SignupScreenState extends State<SignupScreen> {
             const SizedBox(height: 20),
             
             Text(
-              "Create Account", 
+              AppLocalizations.of(context)?.translate('createAccount') ?? "Create Account", 
               style: GoogleFonts.poppins(
                 fontSize: 26, 
                 fontWeight: FontWeight.bold, 
@@ -112,11 +113,11 @@ class _SignupScreenState extends State<SignupScreen> {
               controller: _nameController,
               style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyLarge?.color),
               decoration: InputDecoration(
-                labelText: 'Full Name',
+                labelText: AppLocalizations.of(context)?.translate('fullName') ?? 'Full Name',
                 labelStyle: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6)),
                 prefixIcon: Icon(Iconsax.user, color: Theme.of(context).primaryColor),
                 filled: true, 
-                fillColor: isDark ? Theme.of(context).cardColor : const Color(0xFFF8F9FA),
+                fillColor: Theme.of(context).inputDecorationTheme.fillColor ?? (isDark ? const Color(0xFF2C2C2C) : const Color(0xFFF8F9FA)),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
               ),
             ),
@@ -126,11 +127,11 @@ class _SignupScreenState extends State<SignupScreen> {
               keyboardType: TextInputType.phone,
               style: GoogleFonts.poppins(color: Theme.of(context).textTheme.bodyLarge?.color),
               decoration: InputDecoration(
-                labelText: 'Phone Number',
+                labelText: AppLocalizations.of(context)?.translate('phoneNumber') ?? 'Phone Number',
                 labelStyle: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.6)),
                 prefixIcon: Icon(Iconsax.call, color: Theme.of(context).primaryColor),
                 filled: true, 
-                fillColor: isDark ? Theme.of(context).cardColor : const Color(0xFFF8F9FA),
+                fillColor: Theme.of(context).inputDecorationTheme.fillColor ?? (isDark ? const Color(0xFF2C2C2C) : const Color(0xFFF8F9FA)),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
               ),
             ),
@@ -149,7 +150,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 child: _isLoading 
                   ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 3))
-                  : Text('Verify & Continue', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600)),
+                  : Text(AppLocalizations.of(context)?.translate('verifyContinue') ?? 'Verify & Continue', style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600)),
               ),
             ),
           ],

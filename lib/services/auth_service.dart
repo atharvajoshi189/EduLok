@@ -1,4 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:eduthon/services/database_helper.dart';
 
 class AuthService {
   // --- KEYS ---
@@ -9,16 +10,28 @@ class AuthService {
   static const String _keyToken = 'auth_token';
   static const String _keyOnboarded = 'is_onboarded';
   static const String _keyMobile = 'temp_mobile';
+  static const String _keyClass = 'user_class'; // NEW
 
   // --- STATIC VARIABLES (Quick Access ke liye) ---
   static String? authToken; 
-  static String? userName; // <--- YE MISSING THA, AB ADD KAR DIYA
+  static String? userName; 
 
   // --- INIT (App start par call karna) ---
   static Future<void> init() async {
     final prefs = await SharedPreferences.getInstance();
     authToken = prefs.getString(_keyToken);
     userName = prefs.getString(_keyName); // Load saved name
+  }
+
+  // --- CLASS PERSISTENCE ---
+  static Future<void> saveClass(String classNum) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keyClass, classNum);
+  }
+
+  static Future<String?> getClass() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_keyClass);
   }
 
   // --- TEMP MOBILE ---
@@ -32,7 +45,6 @@ class AuthService {
     return prefs.getString(_keyMobile);
   }
 
-  // --- SAVE TEACHER ---
   // --- SAVE TEACHER ---
   static Future<void> saveTeacherData({
     required String id, 
@@ -122,5 +134,8 @@ class AuthService {
     authToken = null;
     userName = null;
     await prefs.clear();
+    
+    // Clear Database Tables
+    await DatabaseHelper.instance.clearUserTables();
   }
 }
